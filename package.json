@@ -1,14 +1,14 @@
 {
-  "name": "jawblia",
-"description": "Two test React components",
-"author": "Jawblia",
-"keywords": ["react", "components", "ui"],
-"version": "0.1.0",
-"private": false,
-"main": "dist/index.js",
-"module": "dist/index.js",
-"files": [ "dist", "README.md" ],
-"repository": {
+  "name": "react-test-janouy",
+  "description": "A npm publish test",
+  "author": "Janouy",
+  "keywords": ["react", "components", "ui"],
+  "version": "0.1.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/jawblia/npm-test.git"
 },
