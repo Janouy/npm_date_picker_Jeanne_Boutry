@@ -1,0 +1,61 @@
+.calendarRow {
+	display: grid;
+	grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+	grid-template-rows: 20% 20% 20% 20% 20%;
+}
+.notSelectedDay {
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	color: #666;
+	font-size: 1.3vh;
+	text-align: right;
+	vertical-align: middle;
+	padding: 0;
+	border-collapse: collapse;
+	cursor: pointer;
+	height: 25px;
+}
+.today {
+	background: #f5f5f5;
+	color: #178fe5;
+	font-weight: 700;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	text-align: right;
+	vertical-align: middle;
+	padding: 0;
+	border-collapse: collapse;
+	cursor: pointer;
+	height: 25px;
+}
+.selectedDay {
+	background: #33aaff;
+	box-shadow: #178fe5 0 1px 3px 0 inset;
+	color: #fff;
+	font-weight: 700;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	text-align: right;
+	vertical-align: middle;
+	padding: 0;
+	border-collapse: collapse;
+	cursor: pointer;
+	height: 25px;
+}
+.otherMonthDay {
+	opacity: 0.4;
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	color: #666;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	text-align: right;
+	vertical-align: middle;
+	padding: 0;
+	border-collapse: collapse;
+	cursor: normal;
+	height: 25px;
+}
+.date {
+	padding: 5px 5px 0px 0px;
+}

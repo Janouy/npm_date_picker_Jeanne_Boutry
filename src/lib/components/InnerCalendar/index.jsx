@@ -1,9 +1,11 @@
-import React from "react";
-import { weekDays, today } from "../../../utils/const";
-import { displayMonth } from "../../../utils/functions";
+import React, { useContext } from "react";
+import { weekDays, today } from "../../utils/const";
+import { displayMonth } from "../../utils/functions";
 import "./style.css";
+import { DateContext } from "../../utils/context";
 
-const InnerCalendar = ({ choosenYear, choosenMonth, setChoosenDate, choosenDate }) => {
+const InnerCalendar = ({ choosenYear, choosenMonth }) => {
+	const { dateOutput, setDateOutput } = useContext(DateContext);
 	return (
 		<div className="calendarRow">
 			{weekDays.map((day, dayIndex) => (
@@ -17,13 +19,13 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setChoosenDate, choosenDate 
 										? "today"
 										: date.getMonth() !== choosenMonth
 										? "otherMonthDay"
-										: date.getDate() === new Date(choosenDate).getDate()
+										: date.getDate() === new Date(dateOutput).getDate()
 										? "selectedDay"
 										: "notSelectedDay"
 								}
 								key={index}
 							>
-								<div className="date" onClick={() => setChoosenDate(date.toLocaleDateString("en"))}>
+								<div className="date" onClick={() => setDateOutput(date.toLocaleDateString("en"))}>
 									{date.getDate()}
 								</div>
 							</div>

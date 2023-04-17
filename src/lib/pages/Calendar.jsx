@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Arrow from "../../assets/arrow.svg";
-import House from "../../assets/house.svg";
+import Arrow from "../assets/arrow.svg";
+import House from "../assets/house.svg";
 import Months from "../components/Months";
 import Years from "../components/Years";
 import InnerCalendar from "../components/InnerCalendar";
-import { scrollToElement } from "../../utils/functions";
+import { scrollToElement } from "../utils/functions";
 
 const Calendar = () => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
 	const [choosenYear, setChoosenYear] = useState("");
 	const [choosenMonth, setChoosenMonth] = useState("");
-	const [choosenDate, setChoosenDate] = useState("");
 	const [monthOptionIsOpen, setMonthOptionIsOpen] = useState(false);
 	const [yearOptionIsOpen, setYearOptionIsOpen] = useState(false);
 
@@ -85,14 +84,8 @@ const Calendar = () => {
 					</div>
 					<img className="rightArrow" src={Arrow} alt="arrow" onClick={goNextMonth} />
 				</div>
-				<InnerCalendar
-					choosenDate={choosenDate}
-					choosenYear={choosenYear}
-					choosenMonth={choosenMonth}
-					setChoosenDate={setChoosenDate}
-				/>
+				<InnerCalendar choosenYear={choosenYear} choosenMonth={choosenMonth} />
 			</div>
-			<div>{choosenDate}</div>
 		</>
 	);
 };

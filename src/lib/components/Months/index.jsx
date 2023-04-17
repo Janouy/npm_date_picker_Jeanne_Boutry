@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { months } from "../../../utils/const";
-import Arrow from "../../../assets/arrow.svg";
+import { months } from "../../utils/const";
+import Arrow from "../../assets/arrow.svg";
 import "./style.css";
 
 const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen }) => {

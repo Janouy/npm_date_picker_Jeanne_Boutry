@@ -1,20 +1,10 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Badge", {
-  enumerable: true,
-  get: function get() {
-    return _Badge.default;
-  }
-});
-Object.defineProperty(exports, "Button", {
-  enumerable: true,
-  get: function get() {
-    return _Button.default;
-  }
-});
-var _Badge = _interopRequireDefault(require("./components/Badge"));
-var _Button = _interopRequireDefault(require("./components/Button"));
+var _react = _interopRequireDefault(require("react"));
+var _client = _interopRequireDefault(require("react-dom/client"));
+var _App = _interopRequireDefault(require("./App"));
+require("./index.css");
+var _context = require("./lib/utils/context");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const root = _client.default.createRoot(document.getElementById("root"));
+root.render( /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement(_context.DateProvider, null, /*#__PURE__*/_react.default.createElement(_App.default, null))));
