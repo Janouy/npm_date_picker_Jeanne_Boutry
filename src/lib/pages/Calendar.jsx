@@ -7,7 +7,7 @@ import Years from "../components/Years";
 import InnerCalendar from "../components/InnerCalendar";
 import { scrollToElement } from "../utils/functions";
 
-const Calendar = () => {
+const Calendar = ({ isCalendarOpen, dateOutput, setDateOutput }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
 	const [choosenYear, setChoosenYear] = useState("");
@@ -62,9 +62,10 @@ const Calendar = () => {
 			setYearOptionIsOpen(false);
 		}
 	};
+
 	return (
 		<>
-			<div className="calendar" onClick={closeLists}>
+			<div className={isCalendarOpen ? "calendar" : "closedCalendar"} onClick={closeLists}>
 				<div className="selectWrapper">
 					<img className="leftArrow" src={Arrow} alt="arrow" onClick={goPrevMonth} />
 					<img className="house" src={House} alt="arrow" onClick={displayToday} />
@@ -84,7 +85,12 @@ const Calendar = () => {
 					</div>
 					<img className="rightArrow" src={Arrow} alt="arrow" onClick={goNextMonth} />
 				</div>
-				<InnerCalendar choosenYear={choosenYear} choosenMonth={choosenMonth} />
+				<InnerCalendar
+					choosenYear={choosenYear}
+					choosenMonth={choosenMonth}
+					dateOutput={dateOutput}
+					setDateOutput={setDateOutput}
+				/>
 			</div>
 		</>
 	);

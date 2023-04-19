@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import Calendar from "./lib/pages/Calendar";
 import "./App.css";
-import { DateContext } from "./lib/utils/context";
 
 function App() {
-	const { dateOutput } = useContext(DateContext);
+	const [isCalendarOpen, setIsCalendarOpen] = useState(true);
+	const [dateOutput, setDateOutput] = useState();
 	return (
 		<div className="App">
-			<Calendar />
-			<div>{dateOutput}</div>
+			<Calendar
+				isCalendarOpen={isCalendarOpen}
+				setIsCalendarOpen={setIsCalendarOpen}
+				dateOutput={dateOutput}
+				setDateOutput={setDateOutput}
+			/>
 		</div>
 	);
 }

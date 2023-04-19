@@ -1,11 +1,16 @@
 .calendar {
+	position: absolute;
 	width: 25vh;
+	height: 25vh;
 	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
 	background: #fff;
 	border-bottom: 1px solid #bbb;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 	border-top: 1px solid #ccc;
+}
+.closedCalendar {
+	display: none;
 }
 .selectWrapper {
 	display: flex;

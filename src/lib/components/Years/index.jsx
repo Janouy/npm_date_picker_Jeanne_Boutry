@@ -10,7 +10,7 @@ const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) 
 	}, [choosenYear]);
 	return (
 		<div className="selectYear">
-			<div className="selectTitle" onClick={(e) => setYearOptionIsOpen(!yearOptionIsOpen)}>
+			<div className="selectYearTitle" onClick={(e) => setYearOptionIsOpen(!yearOptionIsOpen)}>
 				{currentYear}
 				<img className="selectArrow" src={Arrow} alt="arrow" />
 			</div>

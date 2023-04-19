@@ -1,3 +1,4 @@
-import Calendar from './components/Calendar';
+import Calendar from "./pages/Calendar";
+import Output from "./components/Output";
 
-export { Calendar };
+export { Calendar, Output };

@@ -4,7 +4,7 @@
 	margin-top: 0.5vh;
 }
 
-.selectTitle {
+.selectMonthTitle {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -12,8 +12,9 @@
 	font-weight: bold;
 	font-size: 14px;
 	color: #333333;
+	margin-right: 13px;
 }
-.selectTitle:hover {
+.selectMonthTitle:hover {
 	text-decoration: underline;
 	filter: brightness(0) saturate(100%);
 }

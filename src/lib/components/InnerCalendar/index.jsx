@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { weekDays, today } from "../../utils/const";
 import { displayMonth } from "../../utils/functions";
 import "./style.css";
-import { DateContext } from "../../utils/context";
 
-const InnerCalendar = ({ choosenYear, choosenMonth }) => {
-	const { dateOutput, setDateOutput } = useContext(DateContext);
+const InnerCalendar = ({ choosenYear, choosenMonth, dateOutput, setDateOutput }) => {
 	return (
 		<div className="calendarRow">
 			{weekDays.map((day, dayIndex) => (

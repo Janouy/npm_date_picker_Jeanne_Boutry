@@ -11,7 +11,7 @@ const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpe
 
 	return (
 		<div className="selectMonth">
-			<div className="selectTitle" onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}>
+			<div className="selectMonthTitle" onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}>
 				{currentMonth?.month}
 				<img className="selectArrow" src={Arrow} alt="arrow" />
 			</div>
