@@ -14,8 +14,11 @@ const InnerCalendar = _ref => {
     choosenYear,
     choosenMonth,
     dateOutput,
-    setDateOutput
+    setDateOutput,
+    setIsCalendarOpen,
+    calendarLang
   } = _ref;
+  console.log(dateOutput);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "calendarRow"
   }, _const.weekDays.map((day, dayIndex) => /*#__PURE__*/_react.default.createElement("div", {
@@ -27,7 +30,10 @@ const InnerCalendar = _ref => {
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date",
-    onClick: () => setDateOutput(date.toLocaleDateString("en"))
+    onClick: () => {
+      setDateOutput(date.toLocaleDateString(calendarLang));
+      setIsCalendarOpen(false);
+    }
   }, date.getDate())) : null))));
 };
 var _default = InnerCalendar;

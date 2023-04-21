@@ -18,9 +18,10 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Calendar = _ref => {
   let {
     isCalendarOpen,
-    closeCalendar,
+    setIsCalendarOpen,
     dateOutput,
-    setDateOutput
+    setDateOutput,
+    calendarLang
   } = _ref;
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
@@ -42,7 +43,6 @@ const Calendar = _ref => {
       (0, _functions.scrollToElement)(".selectedMonthOption");
     }
   }, [monthOptionIsOpen, yearOptionIsOpen]);
-  document.addEventListener("click", closeCalendar);
   const setMonth = monthNumber => {
     setChoosenMonth(monthNumber);
     setMonthOptionIsOpen(false);
@@ -109,7 +109,9 @@ const Calendar = _ref => {
     choosenYear: choosenYear,
     choosenMonth: choosenMonth,
     dateOutput: dateOutput,
-    setDateOutput: setDateOutput
+    setDateOutput: setDateOutput,
+    setIsCalendarOpen: setIsCalendarOpen,
+    calendarLang: calendarLang
   })));
 };
 var _default = Calendar;

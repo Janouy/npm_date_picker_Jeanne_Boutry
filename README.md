@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# React simple date picker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+react-test-janouy is a simple React component that allows you to add a calendar date picker to your React application.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Contributing](#contributing)
+-   [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To install React Easy Modale in your project, you can use NPM:
 
-### `npm test`
+```
+npm i react-test-janouy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To use Calendar in your React project, you need to import it into your component and use it as a regular React component. Here's an example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+import Calendar from "react-test-janouy/dist/pages/Calendar";
+import { useState } from "react";
 
-### `npm run eject`
+function MyComponent() {
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+    const [birthDateInput, setBirthDateInput] = useState();
+	const [dateOutput, setDateInput] = useState();
+    const [calendarLang, setCalendarLang] = useState("fr");
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    const showCalendar = () => {
+        setIsCalendarOpen(true);
+    };
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    const hideModal = () => {
+        setIsModalOpen(false);
+    };
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  return (
+    <div onMouseLeave={() => setIsCalendarOpen(false)}>
+        <div onClick={() => showCalendar()}>Date :</div>
+        <Calendar
+            isCalendarOpen={isBirthCalendarOpen}
+            setIsCalendarOpen={setIsCalendarOpen}
+            dateOutput={dateOutput}
+            setDateOutput={setDateOutput}
+            setCalendarLang={setCalendarLang}
+        />
+	</div>
+  );
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+## Customizable properties
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The following properties can be used to customize the EasyModale component:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   `isCalendarOpen` (boolean): Determines whether the calendar is currently open or not.
 
-### Code Splitting
+-   `setIsCalendarOpen` (function): A function that determines if the calendar must be closed or opened with an event.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   `dateOutput` (string): A string that represents the date on which the user clicked.
 
-### Analyzing the Bundle Size
+-   `setDateOutput` (function): A function that determines the date on which the user clicked.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   `setCalendarLang` (function): A function that determines the user's choosen language.
