@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.years = exports.weekDays = exports.today = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = void 0;
+exports.years = exports.weekDays = exports.today = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.excludedClassName = exports.daysPerWeek = void 0;
 const daysPerWeek = 7;
 exports.daysPerWeek = daysPerWeek;
 const maxCalendarDays = 42;
@@ -20,3 +20,5 @@ let years = [];
 exports.years = years;
 const today = new Date();
 exports.today = today;
+const excludedClassName = ["rightArrow", "leftArrow", "selectYearTitle", "selectMonthTitle", "selectArrow", "house", "selectedMonthOption", "selectedYearOption", "option"];
+exports.excludedClassName = excludedClassName;

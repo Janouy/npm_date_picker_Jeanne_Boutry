@@ -1,20 +1,20 @@
 .calendar {
 	position: absolute;
-	width: 25vh;
-	height: 25vh;
+	width: 220px;
+	height: 242px;
 	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
 	background: #fff;
 	border-bottom: 1px solid #bbb;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 	border-top: 1px solid #ccc;
+	padding: 10px 10px 0px 10px;
 }
 .closedCalendar {
 	display: none;
 }
 .selectWrapper {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 }

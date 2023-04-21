@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
 	const [isCalendarOpen, setIsCalendarOpen] = useState(true);
 	const [dateOutput, setDateOutput] = useState();
+	const [calendarLang, setCalendarLang] = useState("en");
 	return (
 		<div className="App">
 			<Calendar
@@ -12,6 +13,8 @@ function App() {
 				setIsCalendarOpen={setIsCalendarOpen}
 				dateOutput={dateOutput}
 				setDateOutput={setDateOutput}
+				calendarLang={calendarLang}
+				setCalendarLang={setCalendarLang}
 			/>
 		</div>
 	);

@@ -18,6 +18,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Calendar = _ref => {
   let {
     isCalendarOpen,
+    closeCalendar,
     dateOutput,
     setDateOutput
   } = _ref;
@@ -41,6 +42,7 @@ const Calendar = _ref => {
       (0, _functions.scrollToElement)(".selectedMonthOption");
     }
   }, [monthOptionIsOpen, yearOptionIsOpen]);
+  document.addEventListener("click", closeCalendar);
   const setMonth = monthNumber => {
     setChoosenMonth(monthNumber);
     setMonthOptionIsOpen(false);

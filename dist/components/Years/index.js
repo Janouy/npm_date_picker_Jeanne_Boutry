@@ -25,7 +25,7 @@ const Years = _ref => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectYear"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectTitle",
+    className: "selectYearTitle",
     onClick: e => setYearOptionIsOpen(!yearOptionIsOpen)
   }, currentYear, /*#__PURE__*/_react.default.createElement("img", {
     className: "selectArrow",

@@ -25,7 +25,7 @@ const Months = _ref => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonth"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectTitle",
+    className: "selectMonthTitle",
     onClick: e => setMonthOptionIsOpen(!monthOptionIsOpen)
   }, currentMonth?.month, /*#__PURE__*/_react.default.createElement("img", {
     className: "selectArrow",

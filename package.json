@@ -1,13 +1,13 @@
 {
-	"name": "react-test-janouy",
-	"description": "A npm publish test",
+	"name": "simple-react-date-picker",
+	"description": "A React date picker",
 	"author": "jeanne06",
 	"keywords": [
 		"react",
 		"components",
 		"ui"
 	],
-	"version": "0.1.16",
+	"version": "1.0.0",
 	"private": false,
 	"main": "dist/index.js",
 	"module": "dist/index.js",

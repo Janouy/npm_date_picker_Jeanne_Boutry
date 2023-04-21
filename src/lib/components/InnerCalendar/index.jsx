@@ -3,7 +3,8 @@ import { weekDays, today } from "../../utils/const";
 import { displayMonth } from "../../utils/functions";
 import "./style.css";
 
-const InnerCalendar = ({ choosenYear, choosenMonth, dateOutput, setDateOutput }) => {
+const InnerCalendar = ({ choosenYear, choosenMonth, dateOutput, setDateOutput, setIsCalendarOpen, calendarLang }) => {
+	console.log(dateOutput);
 	return (
 		<div className="calendarRow">
 			{weekDays.map((day, dayIndex) => (
@@ -23,7 +24,13 @@ const InnerCalendar = ({ choosenYear, choosenMonth, dateOutput, setDateOutput })
 								}
 								key={index}
 							>
-								<div className="date" onClick={() => setDateOutput(date.toLocaleDateString("en"))}>
+								<div
+									className="date"
+									onClick={() => {
+										setDateOutput(date.toLocaleDateString(calendarLang));
+										setIsCalendarOpen(false);
+									}}
+								>
 									{date.getDate()}
 								</div>
 							</div>
