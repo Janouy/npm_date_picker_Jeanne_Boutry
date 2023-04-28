@@ -32,7 +32,7 @@ import { useState } from "react";
 function MyComponent() {
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [birthDateInput, setBirthDateInput] = useState();
-	const [dateOutput, setDateInput] = useState();
+	const [date, setDate] = useState();
     const [calendarLang, setCalendarLang] = useState("fr");
 
     const showCalendar = () => {
@@ -49,9 +49,8 @@ function MyComponent() {
         <Calendar
             isCalendarOpen={isBirthCalendarOpen}
             setIsCalendarOpen={setIsCalendarOpen}
-            dateOutput={dateOutput}
-            setDateOutput={setDateOutput}
-            setCalendarLang={setCalendarLang}
+            dateOutput={date}
+            setDateOutput={setDate}
         />
 	</div>
   );
@@ -67,8 +66,6 @@ The following properties can be used to customize the EasyModale component:
 
 -   `setIsCalendarOpen` (function): A function that determines if the calendar must be closed or opened with an event.
 
--   `dateOutput` (string): A string that represents the date on which the user clicked.
+-   `selectedDate` (string): A string that represents the date on which the user clicked.
 
--   `setDateOutput` (function): A function that determines the date on which the user clicked.
-
--   `setCalendarLang` (function): A function that determines the user's choosen language.
+-   `handleSelectedDate` (function): A function that determines the date on which the user clicked.

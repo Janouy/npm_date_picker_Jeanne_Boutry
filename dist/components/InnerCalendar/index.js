@@ -13,12 +13,10 @@ const InnerCalendar = _ref => {
   let {
     choosenYear,
     choosenMonth,
-    dateOutput,
-    setDateOutput,
-    setIsCalendarOpen,
-    calendarLang
+    selectedDate,
+    onClickedDate,
+    setIsCalendarOpen
   } = _ref;
-  console.log(dateOutput);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "calendarRow"
   }, _const.weekDays.map((day, dayIndex) => /*#__PURE__*/_react.default.createElement("div", {
@@ -26,12 +24,12 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "day"
   }, day), (0, _functions.displayMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === dayIndex ? /*#__PURE__*/_react.default.createElement("div", {
-    className: date.getDate() === _const.today.getDate() && _const.today.getMonth() === choosenMonth ? "today" : date.getMonth() !== choosenMonth ? "otherMonthDay" : date.getDate() === new Date(dateOutput).getDate() ? "selectedDay" : "notSelectedDay",
+    className: date.getDate() === _const.today.getDate() && _const.today.getMonth() === choosenMonth ? "today" : date.getMonth() !== choosenMonth ? "otherMonthDay" : date.getDate() === new Date(selectedDate).getDate() ? "selectedDay" : "notSelectedDay",
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date",
     onClick: () => {
-      setDateOutput(date.toLocaleDateString(calendarLang));
+      onClickedDate(date.toLocaleDateString(navigator.language));
       setIsCalendarOpen(false);
     }
   }, date.getDate())) : null))));

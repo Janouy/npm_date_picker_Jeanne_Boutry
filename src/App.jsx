@@ -4,17 +4,14 @@ import "./App.css";
 
 function App() {
 	const [isCalendarOpen, setIsCalendarOpen] = useState(true);
-	const [dateOutput, setDateOutput] = useState();
-	const [calendarLang, setCalendarLang] = useState("en");
+	const [date, setDate] = useState();
 	return (
 		<div className="App">
 			<Calendar
 				isCalendarOpen={isCalendarOpen}
 				setIsCalendarOpen={setIsCalendarOpen}
-				dateOutput={dateOutput}
-				setDateOutput={setDateOutput}
-				calendarLang={calendarLang}
-				setCalendarLang={setCalendarLang}
+				selectedDate={date}
+				handleSelectedDate={setDate}
 			/>
 		</div>
 	);

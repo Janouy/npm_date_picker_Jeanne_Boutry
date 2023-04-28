@@ -7,7 +7,7 @@ import Years from "../components/Years";
 import InnerCalendar from "../components/InnerCalendar";
 import { scrollToElement } from "../utils/functions";
 
-const Calendar = ({ isCalendarOpen, setIsCalendarOpen, dateOutput, setDateOutput, calendarLang }) => {
+const Calendar = ({ isCalendarOpen, setIsCalendarOpen, selectedDate, handleSelectedDate }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
 	const [choosenYear, setChoosenYear] = useState("");
@@ -88,10 +88,9 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, dateOutput, setDateOutput
 				<InnerCalendar
 					choosenYear={choosenYear}
 					choosenMonth={choosenMonth}
-					dateOutput={dateOutput}
-					setDateOutput={setDateOutput}
+					selectedDate={selectedDate}
+					onClickedDate={handleSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
-					calendarLang={calendarLang}
 				/>
 			</div>
 		</>
