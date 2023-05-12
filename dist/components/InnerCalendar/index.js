@@ -14,7 +14,7 @@ const InnerCalendar = _ref => {
     choosenYear,
     choosenMonth,
     selectedDate,
-    onClickedDate,
+    setSelectedDate,
     setIsCalendarOpen
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -29,7 +29,7 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date",
     onClick: () => {
-      onClickedDate(date.toLocaleDateString("en"));
+      setSelectedDate(date.toLocaleDateString("en"));
       setIsCalendarOpen(false);
     }
   }, date.getDate())) : null))));

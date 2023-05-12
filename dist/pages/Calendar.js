@@ -108,7 +108,7 @@ const Calendar = _ref => {
     choosenYear: choosenYear,
     choosenMonth: choosenMonth,
     selectedDate: selectedDate,
-    onClickedDate: handleSelectedDate,
+    setSelectedDate: handleSelectedDate,
     setIsCalendarOpen: setIsCalendarOpen
   })));
 };

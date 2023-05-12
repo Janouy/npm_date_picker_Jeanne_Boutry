@@ -4,14 +4,6 @@ import { displayMonth } from "../../utils/functions";
 import "./style.css";
 
 const InnerCalendar = ({ choosenYear, choosenMonth, selectedDate, setSelectedDate, setIsCalendarOpen }) => {
-	const setFormatDate = (date) => {
-		let dateLength = date.toLocaleDateString("en").length;
-		if (dateLength === 9) {
-			setSelectedDate("0" + date.toLocaleDateString("en"));
-		} else {
-			setSelectedDate(date.toLocaleDateString("en"));
-		}
-	};
 	return (
 		<div className="calendarRow">
 			{weekDays.map((day, dayIndex) => (
@@ -34,8 +26,8 @@ const InnerCalendar = ({ choosenYear, choosenMonth, selectedDate, setSelectedDat
 								<div
 									className="date"
 									onClick={() => {
-										setFormatDate(date);
-										// setIsCalendarOpen(false);
+										setSelectedDate(date.toLocaleDateString("en"));
+										setIsCalendarOpen(false);
 									}}
 								>
 									{date.getDate()}
