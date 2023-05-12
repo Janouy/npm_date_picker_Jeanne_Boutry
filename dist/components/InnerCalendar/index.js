@@ -29,7 +29,7 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date",
     onClick: () => {
-      onClickedDate(date.toLocaleDateString(navigator.language));
+      onClickedDate(date.toLocaleDateString("en"));
       setIsCalendarOpen(false);
     }
   }, date.getDate())) : null))));

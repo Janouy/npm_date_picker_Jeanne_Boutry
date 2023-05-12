@@ -89,7 +89,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, selectedDate, handleSelec
 					choosenYear={choosenYear}
 					choosenMonth={choosenMonth}
 					selectedDate={selectedDate}
-					onClickedDate={handleSelectedDate}
+					setSelectedDate={handleSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
 				/>
 			</div>
