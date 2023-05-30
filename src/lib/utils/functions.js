@@ -44,5 +44,6 @@ export const displayMonth = (year, month) => {
 	} else if (firstDayOfMonth === 5 && shortMonths.includes(month)) {
 		datesToDisplay = datesArray.slice(0, datesArray.length - (firstDayOfMonth + daysPerWeek));
 	}
+
 	return datesToDisplay;
 };
