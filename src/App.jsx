@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Calendar from "./lib/pages/Calendar";
 import "./App.css";
+import { language } from "./lib/utils/const";
 
 function App() {
 	const [isCalendarOpen, setIsCalendarOpen] = useState(true);
 	const [date, setDate] = useState();
-	let language = "fr";
+
 	let defaultDateFormat = "mm/dd/yyyy";
 	return (
 		<div className="App">
