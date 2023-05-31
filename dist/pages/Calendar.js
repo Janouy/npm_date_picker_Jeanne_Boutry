@@ -19,9 +19,9 @@ const Calendar = _ref => {
   let {
     isCalendarOpen,
     setIsCalendarOpen,
-    selectedDate,
     handleSelectedDate,
-    language
+    language,
+    dateFormat
   } = _ref;
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
@@ -108,10 +108,10 @@ const Calendar = _ref => {
   })), /*#__PURE__*/_react.default.createElement(_InnerCalendar.default, {
     choosenYear: choosenYear,
     choosenMonth: choosenMonth,
-    selectedDate: selectedDate,
     setSelectedDate: handleSelectedDate,
     setIsCalendarOpen: setIsCalendarOpen,
-    language: language
+    language: language,
+    dateFormat: dateFormat
   })));
 };
 var _default = Calendar;

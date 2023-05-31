@@ -3,8 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.scrollToElement = exports.displayMonth = void 0;
+exports.scrollToElement = exports.formatDate = exports.displayMonth = void 0;
 var _const = require("./const");
+var _dateformat = _interopRequireDefault(require("dateformat"));
+var _const2 = require("../utils/const");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const scrollToElement = element => {
   const el = document.querySelector(element);
   if (el) {
@@ -19,7 +22,7 @@ for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
 }
 for (let monthIt = 0; monthIt < 12; monthIt++) {
   _const.months.push({
-    month: new Date(2023, _const.today.getMonth() + monthIt).toLocaleDateString("en-en", {
+    month: new Date(2023, _const.today.getMonth() + monthIt).toLocaleDateString(_const2.language, {
       month: "long"
     }),
     monthNumber: new Date(2023, _const.today.getMonth() + monthIt).getMonth()
@@ -48,3 +51,7 @@ const displayMonth = (year, month) => {
   return datesToDisplay;
 };
 exports.displayMonth = displayMonth;
+const formatDate = (date, format) => {
+  if (date) return (0, _dateformat.default)(date, format);
+};
+exports.formatDate = formatDate;
