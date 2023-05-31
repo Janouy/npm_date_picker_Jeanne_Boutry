@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { weekDays, today } from "../../utils/const";
-import { displayMonth } from "../../utils/functions";
+import { displayMonth, formatDate } from "../../utils/functions";
 import "./style.css";
 
-const InnerCalendar = ({ choosenYear, choosenMonth, selectedDate, setSelectedDate, setIsCalendarOpen }) => {
+const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalendarOpen, language, dateFormat }) => {
+	const [timeStamp, setTimeStamp] = useState();
 	return (
 		<>
 			<div className="calendarRow">
@@ -20,7 +21,7 @@ const InnerCalendar = ({ choosenYear, choosenMonth, selectedDate, setSelectedDat
 											? "today"
 											: date.getMonth() !== choosenMonth
 											? "otherMonthDay"
-											: date.getDate() === new Date(selectedDate).getDate()
+											: date.getDate() === new Date(timeStamp).getDate()
 											? "selectedDay"
 											: "notSelectedDay"
 									}
@@ -31,8 +32,9 @@ const InnerCalendar = ({ choosenYear, choosenMonth, selectedDate, setSelectedDat
 										onClick={
 											date.getMonth() === choosenMonth
 												? () => {
-														setSelectedDate(date);
-														setIsCalendarOpen(false);
+														setSelectedDate(formatDate(date, dateFormat));
+														setTimeStamp(date);
+														//setIsCalendarOpen(false);
 												  }
 												: null
 										}

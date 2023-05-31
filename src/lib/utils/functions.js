@@ -1,4 +1,5 @@
 import { months, years, today, shortMonths, longMonths, daysPerWeek, maxCalendarDays } from "./const";
+import dateFormat from "dateformat";
 
 export const scrollToElement = (element) => {
 	const el = document.querySelector(element);
@@ -46,4 +47,8 @@ export const displayMonth = (year, month) => {
 	}
 
 	return datesToDisplay;
+};
+
+export const formatDate = (date, format) => {
+	if (date) return dateFormat(date, format);
 };

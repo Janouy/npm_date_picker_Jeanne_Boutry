@@ -5,6 +5,8 @@ import "./App.css";
 function App() {
 	const [isCalendarOpen, setIsCalendarOpen] = useState(true);
 	const [date, setDate] = useState();
+	let language = "fr";
+	let defaultDateFormat = "mm/dd/yyyy";
 	return (
 		<div className="App">
 			<Calendar
@@ -12,6 +14,8 @@ function App() {
 				setIsCalendarOpen={setIsCalendarOpen}
 				selectedDate={date}
 				handleSelectedDate={setDate}
+				language={language}
+				dateFormat={defaultDateFormat}
 			/>
 		</div>
 	);

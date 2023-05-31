@@ -15,7 +15,8 @@ const InnerCalendar = _ref => {
     choosenMonth,
     selectedDate,
     setSelectedDate,
-    setIsCalendarOpen
+    setIsCalendarOpen,
+    language
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "calendarRow"
@@ -30,7 +31,7 @@ const InnerCalendar = _ref => {
     className: "date",
     onClick: date.getMonth() === choosenMonth ? () => {
       setSelectedDate(date);
-      setIsCalendarOpen(false);
+      //setIsCalendarOpen(false);
     } : null
   }, date.getDate())) : null)))));
 };

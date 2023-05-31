@@ -20,7 +20,8 @@ const Calendar = _ref => {
     isCalendarOpen,
     setIsCalendarOpen,
     selectedDate,
-    handleSelectedDate
+    handleSelectedDate,
+    language
   } = _ref;
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
@@ -109,7 +110,8 @@ const Calendar = _ref => {
     choosenMonth: choosenMonth,
     selectedDate: selectedDate,
     setSelectedDate: handleSelectedDate,
-    setIsCalendarOpen: setIsCalendarOpen
+    setIsCalendarOpen: setIsCalendarOpen,
+    language: language
   })));
 };
 var _default = Calendar;
