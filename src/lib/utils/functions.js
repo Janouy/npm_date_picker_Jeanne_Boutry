@@ -1,6 +1,5 @@
-import { months, years, today, shortMonths, longMonths, daysPerWeek, maxCalendarDays } from "./const";
+import { years, shortMonths, longMonths, daysPerWeek, maxCalendarDays } from "./const";
 import dateFormat from "dateformat";
-import { language } from "../utils/const";
 
 export const scrollToElement = (element) => {
 	const el = document.querySelector(element);
@@ -11,19 +10,6 @@ export const scrollToElement = (element) => {
 for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
 	years.push(yearIt);
 }
-
-for (let monthIt = 0; monthIt < 12; monthIt++) {
-	months.push({
-		month: new Date(2023, today.getMonth() + monthIt).toLocaleDateString(language, {
-			month: "long",
-		}),
-		monthNumber: new Date(2023, today.getMonth() + monthIt).getMonth(),
-	});
-}
-
-months.sort(function (a, b) {
-	return a.monthNumber - b.monthNumber;
-});
 
 export const displayMonth = (year, month) => {
 	let datesArray = [];

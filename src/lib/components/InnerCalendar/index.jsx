@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { weekDays, today } from "../../utils/const";
+import { today, weekDays_options } from "../../utils/const";
 import { displayMonth, formatDate } from "../../utils/functions";
 import "./style.css";
 
 const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalendarOpen, language, dateFormat }) => {
 	const [timeStamp, setTimeStamp] = useState();
+	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
 	return (
 		<>
 			<div className="calendarRow">
@@ -34,7 +35,7 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 												? () => {
 														setSelectedDate(formatDate(date, dateFormat));
 														setTimeStamp(date);
-														setIsCalendarOpen(false);
+														//setIsCalendarOpen(false);
 												  }
 												: null
 										}

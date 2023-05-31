@@ -75,6 +75,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 							monthOptionIsOpen={monthOptionIsOpen}
 							setMonth={setMonth}
 							setMonthOptionIsOpen={setMonthOptionIsOpen}
+							language={language}
 						/>
 						<Years
 							choosenYear={choosenYear}
@@ -90,8 +91,8 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 					choosenMonth={choosenMonth}
 					setSelectedDate={handleSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
-					language={language}
 					dateFormat={dateFormat}
+					language={language}
 				/>
 			</div>
 		</>

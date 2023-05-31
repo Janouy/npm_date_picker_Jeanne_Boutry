@@ -1,13 +1,11 @@
 export const daysPerWeek = 7;
 export const maxCalendarDays = 42;
-//export let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export const shortMonths = ["1", "3", "5", "8", "10"];
 export const longMonths = ["0", "2", "4", "6", "7", "9", "11"];
 export let months = [];
 export let years = [];
 export const today = new Date();
-export let language = "fr";
-var weekDays_options = {
+export const weekDays_options = {
 	i18n: {
 		ar: {
 			// Arabic
@@ -1092,5 +1090,3 @@ var weekDays_options = {
 		},
 	},
 };
-
-export let weekDays = weekDays_options.i18n[language].dayOfWeekShort;

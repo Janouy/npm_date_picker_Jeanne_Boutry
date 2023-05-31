@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { months } from "../../utils/const";
+import { weekDays_options } from "../../utils/const";
 import Arrow from "../../assets/arrow.svg";
 import "./style.css";
 
-const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen }) => {
+const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language }) => {
+	let months = weekDays_options.i18n[language].months;
 	const [currentMonth, setCUrrentMonth] = useState();
 	useEffect(() => {
-		setCUrrentMonth(months.find((month) => month.monthNumber === choosenMonth));
-	}, [choosenMonth]);
+		setCUrrentMonth(months.find((month, index) => index === choosenMonth));
+	}, [choosenMonth, language]);
 
 	return (
 		<div className="selectMonth">
 			<div className="selectMonthTitle" onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}>
-				{currentMonth?.month}
+				{currentMonth}
 				<img className="selectArrow" src={Arrow} alt="arrow" />
 			</div>
 			<div className={monthOptionIsOpen ? "selectOptions" : "selectOptionClosed"}>
 				{months.map((month, index) =>
-					month.monthNumber === choosenMonth ? (
+					index === choosenMonth ? (
 						<div key={index} className="selectedMonthOption">
-							{month.month}
+							{month}
 						</div>
 					) : (
 						<div className="option" key={index} onClick={(e) => setMonth(index)}>
-							{month.month}
+							{month}
 						</div>
 					),
 				)}
