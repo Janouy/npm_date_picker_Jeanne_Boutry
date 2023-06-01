@@ -3,11 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.years = exports.weekDays_options = exports.today = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = void 0;
+exports.years = exports.weekDays_options = exports.today = exports.timeInADay = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = void 0;
 const daysPerWeek = 7;
+// 42 corresponds to a celendar with max 6 lines and 7 columns
 exports.daysPerWeek = daysPerWeek;
 const maxCalendarDays = 42;
 exports.maxCalendarDays = maxCalendarDays;
+const timeInADay = 60 * 60 * 23 * 1000;
+exports.timeInADay = timeInADay;
 const shortMonths = ["1", "3", "5", "8", "10"];
 exports.shortMonths = shortMonths;
 const longMonths = ["0", "2", "4", "6", "7", "9", "11"];
@@ -16,6 +19,9 @@ let months = [];
 exports.months = months;
 let years = [];
 exports.years = years;
+for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
+  years.push(yearIt);
+}
 const today = new Date();
 exports.today = today;
 const weekDays_options = {

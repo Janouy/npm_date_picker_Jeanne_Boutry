@@ -27,7 +27,7 @@ const InnerCalendar = _ref => {
     key: dayIndex
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "day"
-  }, day), (0, _functions.displayMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === dayIndex ? /*#__PURE__*/_react.default.createElement("div", {
+  }, day), (0, _functions.displayCurrentMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === dayIndex ? /*#__PURE__*/_react.default.createElement("div", {
     className: date.getDate() === _const.today.getDate() && date.getMonth() === _const.today.getMonth() && choosenMonth === _const.today.getMonth() ? "today" : date.getMonth() !== choosenMonth ? "otherMonthDay" : date.getDate() === new Date(timeStamp).getDate() ? "selectedDay" : "notSelectedDay",
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {

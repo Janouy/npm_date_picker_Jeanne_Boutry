@@ -6,9 +6,16 @@ react-test-janouy is a simple React component that allows you to add a calendar 
 
 ## Table of contents
 
+-   [Main features](#main-features)
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Customizable properties](#customizable-properties)
+
+## Main features
+
+-   ☀️ Select days, ranges or whatever
+-   🌎 Localizable into many [language](#supported-languages)
+-   📄 Easy to integrate
 
 ## Installation
 
@@ -18,6 +25,34 @@ To install React Easy Modale in your project, you can use NPM:
 npm i react-test-janouy
 
 ```
+
+![NodeJS](https://img.shields.io/badge/node.js-v16.19.1-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![React](https://img.shields.io/badge/react-v18.2.0-61dafb?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+# Sleep Well : the smart alarm-clock app
+
+Sleep Well aims at developing a smart alarm clock for iPhones that monitors your breathing rhythm while you sleep to determine your sleep cycles.
+
+## Technologies
+
+-   JS
+-   CSS
+-   React
+
+## Contribute to the project
+
+Sleep Well is an open source project. Feel free to fork the source and contribute with your own features.
+
+## Authors
+
+Our code squad : Francis & Stéphane
+
+## Licensing
+
+This project was built under the Creative Commons licence.
 
 ## Usage
 
