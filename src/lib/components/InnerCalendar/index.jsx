@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { today, weekDays_options } from "../../utils/const";
-import { displayMonth, formatDate } from "../../utils/functions";
+import { displayCurrentMonth, formatDate } from "../../utils/functions";
 import "./style.css";
 
 const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalendarOpen, language, dateFormat }) => {
@@ -12,7 +12,7 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 				{weekDays.map((day, dayIndex) => (
 					<div key={dayIndex}>
 						<div className="day">{day}</div>
-						{displayMonth(choosenYear.toString(), choosenMonth.toString()).map((date, index) =>
+						{displayCurrentMonth(choosenYear.toString(), choosenMonth.toString()).map((date, index) =>
 							date.getDay() === dayIndex ? (
 								<div
 									className={
@@ -35,7 +35,7 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 												? () => {
 														setSelectedDate(formatDate(date, dateFormat));
 														setTimeStamp(date);
-														//setIsCalendarOpen(false);
+														setIsCalendarOpen(false);
 												  }
 												: null
 										}

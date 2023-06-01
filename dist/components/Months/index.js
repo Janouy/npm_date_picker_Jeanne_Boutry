@@ -16,31 +16,33 @@ const Months = _ref => {
     choosenMonth,
     monthOptionIsOpen,
     setMonth,
-    setMonthOptionIsOpen
+    setMonthOptionIsOpen,
+    language
   } = _ref;
+  let months = _const.weekDays_options.i18n[language].months;
   const [currentMonth, setCUrrentMonth] = (0, _react.useState)();
   (0, _react.useEffect)(() => {
-    setCUrrentMonth(_const.months.find(month => month.monthNumber === choosenMonth));
-  }, [choosenMonth]);
+    setCUrrentMonth(months.find((month, index) => index === choosenMonth));
+  }, [choosenMonth, language]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonth"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonthTitle",
     onClick: e => setMonthOptionIsOpen(!monthOptionIsOpen)
-  }, currentMonth?.month, /*#__PURE__*/_react.default.createElement("img", {
+  }, currentMonth, /*#__PURE__*/_react.default.createElement("img", {
     className: "selectArrow",
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: monthOptionIsOpen ? "selectOptions" : "selectOptionClosed"
-  }, _const.months.map((month, index) => month.monthNumber === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
+  }, months.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
     className: "selectedMonthOption"
-  }, month.month) : /*#__PURE__*/_react.default.createElement("div", {
+  }, month) : /*#__PURE__*/_react.default.createElement("div", {
     className: "option",
     key: index,
     onClick: e => setMonth(index)
-  }, month.month))));
+  }, month))));
 };
 var _default = Months;
 exports.default = _default;

@@ -94,7 +94,8 @@ const Calendar = _ref => {
     choosenMonth: choosenMonth,
     monthOptionIsOpen: monthOptionIsOpen,
     setMonth: setMonth,
-    setMonthOptionIsOpen: setMonthOptionIsOpen
+    setMonthOptionIsOpen: setMonthOptionIsOpen,
+    language: language
   }), /*#__PURE__*/_react.default.createElement(_Years.default, {
     choosenYear: choosenYear,
     setYearOptionIsOpen: setYearOptionIsOpen,
@@ -110,8 +111,8 @@ const Calendar = _ref => {
     choosenMonth: choosenMonth,
     setSelectedDate: handleSelectedDate,
     setIsCalendarOpen: setIsCalendarOpen,
-    language: language,
-    dateFormat: dateFormat
+    dateFormat: dateFormat,
+    language: language
   })));
 };
 var _default = Calendar;

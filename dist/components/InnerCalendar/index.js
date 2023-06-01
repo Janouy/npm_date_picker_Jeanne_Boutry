@@ -20,9 +20,10 @@ const InnerCalendar = _ref => {
     dateFormat
   } = _ref;
   const [timeStamp, setTimeStamp] = (0, _react.useState)();
+  let weekDays = _const.weekDays_options.i18n[language].dayOfWeekShort;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "calendarRow"
-  }, _const.weekDays.map((day, dayIndex) => /*#__PURE__*/_react.default.createElement("div", {
+  }, weekDays.map((day, dayIndex) => /*#__PURE__*/_react.default.createElement("div", {
     key: dayIndex
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "day"

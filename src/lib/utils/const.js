@@ -1,9 +1,14 @@
 export const daysPerWeek = 7;
+// 42 corresponds to a celendar with max 6 lines and 7 columns
 export const maxCalendarDays = 42;
+export const timeInADay = 60 * 60 * 23 * 1000;
 export const shortMonths = ["1", "3", "5", "8", "10"];
 export const longMonths = ["0", "2", "4", "6", "7", "9", "11"];
 export let months = [];
 export let years = [];
+for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
+	years.push(yearIt);
+}
 export const today = new Date();
 export const weekDays_options = {
 	i18n: {

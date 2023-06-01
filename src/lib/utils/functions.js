@@ -1,4 +1,4 @@
-import { years, shortMonths, longMonths, daysPerWeek, maxCalendarDays } from "./const";
+import { shortMonths, longMonths, daysPerWeek, maxCalendarDays, timeInADay } from "./const";
 import dateFormat from "dateformat";
 
 export const scrollToElement = (element) => {
@@ -7,35 +7,36 @@ export const scrollToElement = (element) => {
 		el.scrollIntoView({ behavior: "instant" });
 	}
 };
-for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
-	years.push(yearIt);
-}
 
-export const displayMonth = (year, month) => {
+//display the days of the current month in the calendar according to the choosen year and month
+export const displayCurrentMonth = (year, month) => {
 	let datesArray = [];
 	let datesToDisplay = [];
+	//store the maxCalendarDays(42) days according to the users's choosen month and year in the calendar
 	for (let dayIt = 1; dayIt <= maxCalendarDays; dayIt++) {
 		datesArray.push(new Date(year, month, dayIt));
 	}
-	const firstDayOfMonth = datesArray[0].getDay();
-	for (let j = 0; j < firstDayOfMonth; j++) {
-		datesArray.unshift(new Date(datesArray[0] - 60 * 60 * 23 * 1000));
+	// determinate the first week day of the month
+	const firstWeekDayOfMonth = datesArray[0].getDay();
+	//add end previous month last days to complete the begining of the calendar
+	for (let j = 0; j < firstWeekDayOfMonth; j++) {
+		datesArray.unshift(new Date(datesArray[0] - timeInADay));
 	}
-
+	// correctly display the month's day according to severals conditions
 	if (
-		(firstDayOfMonth >= 5 && longMonths.includes(month)) ||
-		(firstDayOfMonth === 6 && shortMonths.includes(month))
+		(firstWeekDayOfMonth >= 5 && longMonths.includes(month)) ||
+		(firstWeekDayOfMonth === 6 && shortMonths.includes(month))
 	) {
-		datesToDisplay = datesArray.slice(0, datesArray.length - firstDayOfMonth);
-	} else if (firstDayOfMonth < 5) {
-		datesToDisplay = datesArray.slice(0, datesArray.length - (firstDayOfMonth + daysPerWeek));
-	} else if (firstDayOfMonth === 5 && shortMonths.includes(month)) {
-		datesToDisplay = datesArray.slice(0, datesArray.length - (firstDayOfMonth + daysPerWeek));
+		datesToDisplay = datesArray.slice(0, datesArray.length - firstWeekDayOfMonth);
+	} else if (firstWeekDayOfMonth < 5) {
+		datesToDisplay = datesArray.slice(0, datesArray.length - (firstWeekDayOfMonth + daysPerWeek));
+	} else if (firstWeekDayOfMonth === 5 && shortMonths.includes(month)) {
+		datesToDisplay = datesArray.slice(0, datesArray.length - (firstWeekDayOfMonth + daysPerWeek));
 	}
 
 	return datesToDisplay;
 };
-
+//format the date according the informed format
 export const formatDate = (date, format) => {
 	if (date) return dateFormat(date, format);
 };
