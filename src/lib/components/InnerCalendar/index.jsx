@@ -35,7 +35,7 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 												? () => {
 														setSelectedDate(formatDate(date, dateFormat));
 														setTimeStamp(date);
-														setIsCalendarOpen(false);
+														//setIsCalendarOpen(false);
 												  }
 												: null
 										}

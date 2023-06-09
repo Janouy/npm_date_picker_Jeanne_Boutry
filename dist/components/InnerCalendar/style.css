@@ -15,6 +15,7 @@
 	cursor: pointer;
 	height: 25px;
 }
+
 .today {
 	background: #f5f5f5;
 	color: #178fe5;
@@ -42,6 +43,12 @@
 	cursor: pointer;
 	height: 25px;
 }
+.selectedDay:hover,
+.today:hover,
+.notSelectedDay:hover {
+	background: #ef8504;
+	color: #fff;
+}
 .otherMonthDay {
 	opacity: 0.4;
 	background: #f5f5f5;
@@ -55,6 +62,10 @@
 	border-collapse: collapse;
 	cursor: normal;
 	height: 25px;
+}
+.otherMonthDay:hover {
+	background: #f2bb43;
+	color: #fff;
 }
 .date {
 	padding: 5px 5px 0px 0px;

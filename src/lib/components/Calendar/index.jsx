@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Arrow from "../assets/arrow.svg";
-import House from "../assets/house.svg";
-import Months from "../components/Months";
-import Years from "../components/Years";
-import InnerCalendar from "../components/InnerCalendar";
-import { scrollToElement } from "../utils/functions";
+import Arrow from "../../assets/arrow.svg";
+import House from "../../assets/house.svg";
+import Months from "../Months";
+import Years from "../Years";
+import InnerCalendar from "../InnerCalendar";
+import { scrollToElement } from "../../utils/functions";
 
 const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, language, dateFormat }) => {
 	const currentMonth = new Date().getMonth();

@@ -35,7 +35,7 @@ const InnerCalendar = _ref => {
     onClick: date.getMonth() === choosenMonth ? () => {
       setSelectedDate((0, _functions.formatDate)(date, dateFormat));
       setTimeStamp(date);
-      setIsCalendarOpen(false);
+      //setIsCalendarOpen(false);
     } : null
   }, date.getDate())) : null)))));
 };

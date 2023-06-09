@@ -9,6 +9,33 @@ export let years = [];
 for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
 	years.push(yearIt);
 }
+export const calendarChildren = [
+	"calendar",
+	"closedCalendar",
+	"calendarRow",
+	"day",
+	"today",
+	"otherMonthDay",
+	"selectedDay",
+	"notSelectedDay",
+	"date",
+	"selectWrapper",
+	"leftArrow",
+	"house",
+	"labelsWrapper",
+	"rightArrow",
+	"selectMonth",
+	"selectMonthTitle",
+	"selectArrow",
+	"selectOptions",
+	"selectOptionClosed",
+	"selectedMonthOption",
+	"option",
+	"selectYear",
+	"selectYearTitle",
+	"selectedYearOption",
+	"dateInput",
+];
 export const today = new Date();
 export const weekDays_options = {
 	i18n: {

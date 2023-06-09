@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.years = exports.weekDays_options = exports.today = exports.timeInADay = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = void 0;
+exports.years = exports.weekDays_options = exports.today = exports.timeInADay = exports.shortMonths = exports.months = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = exports.calendarChildren = void 0;
 const daysPerWeek = 7;
 // 42 corresponds to a celendar with max 6 lines and 7 columns
 exports.daysPerWeek = daysPerWeek;
@@ -22,6 +22,8 @@ exports.years = years;
 for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
   years.push(yearIt);
 }
+const calendarChildren = ["calendar", "closedCalendar", "calendarRow", "day", "today", "otherMonthDay", "selectedDay", "notSelectedDay", "date", "selectWrapper", "leftArrow", "house", "labelsWrapper", "rightArrow", "selectMonth", "selectMonthTitle", "selectArrow", "selectOptions", "selectOptionClosed", "selectedMonthOption", "option", "selectYear", "selectYearTitle", "selectedYearOption", "dateInput"];
+exports.calendarChildren = calendarChildren;
 const today = new Date();
 exports.today = today;
 const weekDays_options = {

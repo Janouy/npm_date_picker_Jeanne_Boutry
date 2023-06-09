@@ -1,4 +1,4 @@
-import Calendar from "./pages/Calendar";
+import CalendarInput from "./components/CalendarInput";
 
-//export Calendar to permit users to import Calendar from the npm library
-export { Calendar };
+//export CalendarInput to permit users to import CalendarInput from the npm library
+export { CalendarInput };
