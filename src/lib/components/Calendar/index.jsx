@@ -75,14 +75,16 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	return (
 		<>
 			<div
-				className={isCalendarOpen ? "calendar" : "closedCalendar"}
+				className={
+					isCalendarOpen ? "calendar-react-date-picker-janouy" : "closedCalendar-react-date-picker-janouy"
+				}
 				onClick={closeLists}
 				onWheel={(event) => changeMonth(event)}
 			>
-				<div className="selectWrapper">
-					<img className="leftArrow" src={Arrow} alt="arrow" onClick={goPrevMonth} />
-					<img className="house" src={House} alt="arrow" onClick={displayToday} />
-					<div className="labelsWrapper">
+				<div className="selectWrapper-react-date-picker-janouy">
+					<img className="leftArrow-react-date-picker-janouy" src={Arrow} alt="arrow" onClick={goPrevMonth} />
+					<img className="house-react-date-picker-janouy" src={House} alt="arrow" onClick={displayToday} />
+					<div className="labelsWrapper-react-date-picker-janouy">
 						<Months
 							choosenMonth={choosenMonth}
 							monthOptionIsOpen={monthOptionIsOpen}
@@ -97,7 +99,12 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 							setYear={setYear}
 						/>
 					</div>
-					<img className="rightArrow" src={Arrow} alt="arrow" onClick={goNextMonth} />
+					<img
+						className="rightArrow-react-date-picker-janouy"
+						src={Arrow}
+						alt="arrow"
+						onClick={goNextMonth}
+					/>
 				</div>
 				<InnerCalendar
 					choosenYear={choosenYear}

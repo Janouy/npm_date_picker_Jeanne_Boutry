@@ -1,4 +1,4 @@
-.calendar {
+.calendar-react-date-picker-janouy {
 	position: relative;
 	width: 220px;
 	height: 100%;
@@ -11,42 +11,42 @@
 	padding: 10px 10px 10px 10px;
 	z-index: 10;
 }
-.closedCalendar {
+.closedCalendar-react-date-picker-janouy {
 	display: none;
 }
-.selectWrapper {
+.selectWrapper-react-date-picker-janouy {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.labelsWrapper {
+.labelsWrapper-react-date-picker-janouy {
 	display: flex;
 	justify-content: flex-end;
 }
-.leftArrow {
+.leftArrow-react-date-picker-janouy {
 	width: 20px;
 	height: 20px;
 	transform: rotate(90deg);
 	cursor: pointer;
 }
-.rightArrow {
+.rightArrow-react-date-picker-janouy {
 	width: 20px;
 	height: 20px;
 	transform: rotate(-90deg);
 	cursor: pointer;
 }
-.house {
+.house-react-date-picker-janouy {
 	width: 30px;
 	margin-left: -2vh;
 	cursor: pointer;
 }
-.house:hover,
-.rightArrow:hover,
-.leftArrow:hover,
-.selectArrow:hover {
+.house-react-date-picker-janouy:hover,
+.rightArrow-react-date-picker-janouy:hover,
+.leftArrow-react-date-picker-janouy:hover,
+.selectArrow-react-date-picker-janouy:hover {
 	filter: brightness(0) saturate(100%);
 }
-.day {
+.day-react-date-picker-janouy {
 	font-weight: 700;
 	text-align: center;
 	color: #999;

@@ -11,19 +11,28 @@ const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpe
 	}, [choosenMonth, language]);
 
 	return (
-		<div className="selectMonth">
-			<div className="selectMonthTitle" onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}>
+		<div className="selectMonth-react-date-picker-janouy">
+			<div
+				className="selectMonthTitle-react-date-picker-janouy"
+				onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}
+			>
 				{currentMonth}
-				<img className="selectArrow" src={Arrow} alt="arrow" />
+				<img className="selectArrow-react-date-picker-janouy" src={Arrow} alt="arrow" />
 			</div>
-			<div className={monthOptionIsOpen ? "selectOptions" : "selectOptionClosed"}>
+			<div
+				className={
+					monthOptionIsOpen
+						? "selectOptions-react-date-picker-janouy"
+						: "selectOptionClosed-react-date-picker-janouy"
+				}
+			>
 				{months.map((month, index) =>
 					index === choosenMonth ? (
-						<div key={index} className="selectedMonthOption">
+						<div key={index} className="selectedMonthOption-react-date-picker-janouy">
 							{month}
 						</div>
 					) : (
-						<div className="option" key={index} onClick={(e) => setMonth(index)}>
+						<div className="option-react-date-picker-janouy" key={index} onClick={(e) => setMonth(index)}>
 							{month}
 						</div>
 					),

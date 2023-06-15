@@ -11,7 +11,7 @@ function App() {
 	let defaultLanguage = "en";
 
 	return (
-		<div className="App">
+		<div className="App-react-date-picker-janouy">
 			<CalendarInput
 				isCalendarOpen={isCalendarOpen}
 				setIsCalendarOpen={setIsCalendarOpen}

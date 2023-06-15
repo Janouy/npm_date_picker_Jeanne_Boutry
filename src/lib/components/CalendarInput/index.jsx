@@ -26,9 +26,9 @@ const CalendarInput = ({
 		};
 	});
 	return (
-		<div className="calendarWrapper" style={calendarWrapperStyle}>
+		<div className="calendarWrapper-react-date-picker-janouy" style={calendarWrapperStyle}>
 			<input
-				className="dateInput"
+				className="dateInput-react-date-picker-janouy"
 				defaultValue={selectedDate}
 				style={inputStyle}
 				onClick={() => setIsCalendarOpen(true)}

@@ -8,10 +8,10 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
 	return (
 		<>
-			<div className="calendarRow">
+			<div className="calendarRow-react-date-picker-janouy">
 				{weekDays.map((day, dayIndex) => (
 					<div key={dayIndex}>
-						<div className="day">{day}</div>
+						<div className="day-react-date-picker-janouy">{day}</div>
 						{displayCurrentMonth(choosenYear.toString(), choosenMonth.toString()).map((date, index) =>
 							date.getDay() === dayIndex ? (
 								<div
@@ -19,17 +19,17 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 										date.getDate() === today.getDate() &&
 										date.getMonth() === today.getMonth() &&
 										choosenMonth === today.getMonth()
-											? "today"
+											? "today-react-date-picker-janouy"
 											: date.getMonth() !== choosenMonth
-											? "otherMonthDay"
+											? "otherMonthDay-react-date-picker-janouy"
 											: date.getDate() === new Date(timeStamp).getDate()
-											? "selectedDay"
-											: "notSelectedDay"
+											? "selectedDay-react-date-picker-janouy"
+											: "notSelectedDay-react-date-picker-janouy"
 									}
 									key={index}
 								>
 									<div
-										className="date"
+										className="date-react-date-picker-janouy"
 										onClick={
 											date.getMonth() === choosenMonth
 												? () => {
