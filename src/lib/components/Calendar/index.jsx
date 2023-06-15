@@ -43,7 +43,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	const goNextMonth = () => {
 		if (choosenMonth < 11) {
 			setChoosenMonth(choosenMonth + 1);
-		} else if (choosenMonth === 11) {
+		} else if (choosenMonth === 11 && choosenYear < 2050) {
 			setChoosenYear(choosenYear + 1);
 			setChoosenMonth(0);
 		}
@@ -51,7 +51,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	const goPrevMonth = () => {
 		if (choosenMonth > 0) {
 			setChoosenMonth(choosenMonth - 1);
-		} else if (choosenMonth === 0) {
+		} else if (choosenMonth === 0 && choosenYear > 1950) {
 			setChoosenYear(choosenYear - 1);
 			setChoosenMonth(11);
 		}
@@ -62,10 +62,23 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 			setYearOptionIsOpen(false);
 		}
 	};
+	const changeMonth = (event) => {
+		if (event.target.className !== "option") {
+			if (Math.sign(event.deltaY) === 1) {
+				goNextMonth();
+			} else if (Math.sign(event.deltaY) === -1) {
+				goPrevMonth();
+			}
+		}
+	};
 
 	return (
 		<>
-			<div className={isCalendarOpen ? "calendar" : "closedCalendar"} onClick={closeLists}>
+			<div
+				className={isCalendarOpen ? "calendar" : "closedCalendar"}
+				onClick={closeLists}
+				onWheel={(event) => changeMonth(event)}
+			>
 				<div className="selectWrapper">
 					<img className="leftArrow" src={Arrow} alt="arrow" onClick={goPrevMonth} />
 					<img className="house" src={House} alt="arrow" onClick={displayToday} />

@@ -29,7 +29,7 @@ const CalendarInput = ({
 		<div className="calendarWrapper" style={calendarWrapperStyle}>
 			<input
 				className="dateInput"
-				value={selectedDate}
+				defaultValue={selectedDate}
 				style={inputStyle}
 				onClick={() => setIsCalendarOpen(true)}
 			></input>
