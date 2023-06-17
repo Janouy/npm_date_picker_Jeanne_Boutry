@@ -42,6 +42,7 @@ const CalendarWrapper = ({
 	const handleChange = (event) => {
 		handleSelectedDate(event.target.value);
 	};
+
 	return (
 		<div className="calendarWrapper-react-date-picker-janouy" style={calendarWrapperStyle}>
 			<input
@@ -49,7 +50,7 @@ const CalendarWrapper = ({
 				value={selectedDate}
 				style={inputStyle}
 				onChange={handleChange}
-				onClick={() => setIsCalendarOpen(true)}
+				onPointerDown={() => setIsCalendarOpen(true)}
 				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat, inputDateElement)}
 				ref={inputDateElement}
 			></input>
@@ -59,7 +60,6 @@ const CalendarWrapper = ({
 				handleSelectedDate={handleSelectedDate}
 				language={language}
 				dateFormat={dateFormat}
-				inputDateElement={inputDateElement}
 			/>
 		</div>
 	);
