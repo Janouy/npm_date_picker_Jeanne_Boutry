@@ -32,9 +32,9 @@ const Calendar = ({
 
 	useEffect(() => {
 		if (yearOptionIsOpen) {
-			scrollToElement(".selectedYearOption");
+			scrollToElement(".selectedYearOption-react-date-picker-janouy");
 		} else if (monthOptionIsOpen) {
-			scrollToElement(".selectedMonthOption");
+			scrollToElement(".selectedMonthOption-react-date-picker-janouy");
 		}
 	}, [monthOptionIsOpen, yearOptionIsOpen]);
 
@@ -70,7 +70,7 @@ const Calendar = ({
 		}
 	};
 	const changeMonth = (event) => {
-		if (event.target.className !== "option") {
+		if (event.target.className !== "option-react-date-picker-janouy") {
 			if (Math.sign(event.deltaY) === 1) {
 				goNextMonth();
 			} else if (Math.sign(event.deltaY) === -1) {
