@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./style.css";
 import Arrow from "../../assets/arrow.svg";
 import House from "../../assets/house.svg";
@@ -14,7 +14,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	const [choosenMonth, setChoosenMonth] = useState("");
 	const [monthOptionIsOpen, setMonthOptionIsOpen] = useState(false);
 	const [yearOptionIsOpen, setYearOptionIsOpen] = useState(false);
-
+	const calendarElement = useRef();
 	const displayToday = () => {
 		setChoosenMonth(currentMonth);
 		setChoosenYear(currentYear);
@@ -72,6 +72,17 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 		}
 	};
 
+	useEffect(() => {
+		if (isCalendarOpen) {
+			calendarElement.current.addEventListener(
+				"wheel",
+				(e) => {
+					e.preventDefault();
+				},
+				{ passive: false },
+			);
+		}
+	}, [isCalendarOpen]);
 	return (
 		<>
 			<div
@@ -80,6 +91,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 				}
 				onClick={closeLists}
 				onWheel={(event) => changeMonth(event)}
+				ref={calendarElement}
 			>
 				<div className="selectWrapper-react-date-picker-janouy">
 					<img className="leftArrow-react-date-picker-janouy" src={Arrow} alt="arrow" onClick={goPrevMonth} />
