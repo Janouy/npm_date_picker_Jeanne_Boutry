@@ -3,9 +3,18 @@ import { today, weekDays_options } from "../../utils/const";
 import { displayCurrentMonth, formatDate } from "../../utils/functions";
 import "./style.css";
 
-const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalendarOpen, language, dateFormat }) => {
+const InnerCalendar = ({
+	choosenYear,
+	choosenMonth,
+	setSelectedDate,
+	setIsCalendarOpen,
+	language,
+	dateFormat,
+	inputDateElement,
+}) => {
 	const [timeStamp, setTimeStamp] = useState();
 	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
+
 	return (
 		<>
 			<div className="calendarRow-react-date-picker-janouy">

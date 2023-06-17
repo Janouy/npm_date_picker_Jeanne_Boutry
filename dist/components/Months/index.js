@@ -25,21 +25,21 @@ const Months = _ref => {
     setCUrrentMonth(months.find((month, index) => index === choosenMonth));
   }, [choosenMonth, language]);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectMonth"
+    className: "selectMonth-react-date-picker-janouy"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectMonthTitle",
+    className: "selectMonthTitle-react-date-picker-janouy",
     onClick: e => setMonthOptionIsOpen(!monthOptionIsOpen)
   }, currentMonth, /*#__PURE__*/_react.default.createElement("img", {
-    className: "selectArrow",
+    className: "selectArrow-react-date-picker-janouy",
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: monthOptionIsOpen ? "selectOptions" : "selectOptionClosed"
+    className: monthOptionIsOpen ? "selectOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
   }, months.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
-    className: "selectedMonthOption"
+    className: "selectedMonthOption-react-date-picker-janouy"
   }, month) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "option",
+    className: "option-react-date-picker-janouy",
     key: index,
     onClick: e => setMonth(index)
   }, month))));

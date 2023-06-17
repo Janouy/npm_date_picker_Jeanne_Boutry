@@ -1,10 +1,10 @@
-.selectMonth {
+.selectMonth-react-date-picker-janouy {
 	width: 8vh;
 	height: 2vh;
 	margin-top: 0.5vh;
 }
 
-.selectMonthTitle {
+.selectMonthTitle-react-date-picker-janouy {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -14,14 +14,14 @@
 	color: #333333;
 	margin-right: 13px;
 }
-.selectMonthTitle:hover {
+.selectMonthTitle-react-date-picker-janouy:hover {
 	text-decoration: underline;
 	filter: brightness(0) saturate(100%);
 }
-.selectArrow {
+.selectArrow-react-date-picker-janouy {
 	height: 13px;
 }
-.selectOptions {
+.selectOptions-react-date-picker-janouy {
 	position: relative;
 	top: 1vh;
 	width: 100%;
@@ -37,17 +37,17 @@
 	border: 1px solid #ddd;
 	font-weight: bold;
 }
-.selectOptionClosed {
+.selectOptionClosed-react-date-picker-janouy {
 	display: none;
 }
-.selectedMonthOption {
+.selectedMonthOption-react-date-picker-janouy {
 	background: #33aaff;
 	box-shadow: #178fe5 0 1px 3px 0 inset;
 	line-height: 2.5vh;
 	padding-right: 0.5vh;
 	color: #fff;
 }
-.option {
+.option-react-date-picker-janouy {
 	line-height: 2.5vh;
 	padding-right: 0.5vh;
 }

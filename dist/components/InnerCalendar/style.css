@@ -1,9 +1,9 @@
-.calendarRow {
+.calendarRow-react-date-picker-janouy {
 	display: grid;
 	grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
 	grid-template-rows: 20% 20% 20% 20% 20%;
 }
-.notSelectedDay {
+.notSelectedDay-react-date-picker-janouy {
 	background: #f5f5f5;
 	border: 1px solid #ddd;
 	color: #666;
@@ -16,7 +16,7 @@
 	height: 25px;
 }
 
-.today {
+.today-react-date-picker-janouy {
 	background: #f5f5f5;
 	color: #178fe5;
 	font-weight: 700;
@@ -29,7 +29,7 @@
 	cursor: pointer;
 	height: 25px;
 }
-.selectedDay {
+.selectedDay-react-date-picker-janouy {
 	background: #33aaff;
 	box-shadow: #178fe5 0 1px 3px 0 inset;
 	color: #fff;
@@ -43,13 +43,13 @@
 	cursor: pointer;
 	height: 25px;
 }
-.selectedDay:hover,
-.today:hover,
-.notSelectedDay:hover {
+.selectedDay-react-date-picker-janouy:hover,
+.today-react-date-picker-janouy:hover,
+.notSelectedDay-react-date-picker-janouy:hover {
 	background: #ef8504;
 	color: #fff;
 }
-.otherMonthDay {
+.otherMonthDay-react-date-picker-janouy {
 	opacity: 0.4;
 	background: #f5f5f5;
 	border: 1px solid #ddd;
@@ -63,10 +63,10 @@
 	cursor: normal;
 	height: 25px;
 }
-.otherMonthDay:hover {
+.otherMonthDay-react-date-picker-janouy:hover {
 	background: #f2bb43;
 	color: #fff;
 }
-.date {
+.date-react-date-picker-janouy {
 	padding: 5px 5px 0px 0px;
 }

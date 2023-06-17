@@ -23,21 +23,21 @@ const Years = _ref => {
     setCurrentYear(_const.years.find(year => year === choosenYear));
   }, [choosenYear]);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectYear"
+    className: "selectYear-react-date-picker-janouy"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "selectYearTitle",
+    className: "selectYearTitle-react-date-picker-janouy",
     onClick: e => setYearOptionIsOpen(!yearOptionIsOpen)
   }, currentYear, /*#__PURE__*/_react.default.createElement("img", {
-    className: "selectArrow",
+    className: "selectArrow-react-date-picker-janouy",
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: yearOptionIsOpen ? "selectOptions" : "selectOptionClosed"
+    className: yearOptionIsOpen ? "selectOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
   }, _const.years.map((year, index) => year === choosenYear ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
-    className: "selectedYearOption"
+    className: "selectedYearOption-react-date-picker-janouy"
   }, year) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "option",
+    className: "option-react-date-picker-janouy",
     key: index,
     onClick: e => setYear(e.target.innerHTML)
   }, year))));

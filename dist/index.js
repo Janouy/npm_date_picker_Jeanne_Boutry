@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "CalendarInput", {
+Object.defineProperty(exports, "CalendarWrapper", {
   enumerable: true,
   get: function () {
-    return _CalendarInput.default;
+    return _CalendarWrapper.default;
   }
 });
-var _CalendarInput = _interopRequireDefault(require("./components/CalendarInput"));
+var _CalendarWrapper = _interopRequireDefault(require("./components/CalendarWrapper"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
