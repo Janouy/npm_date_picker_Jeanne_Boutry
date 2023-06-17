@@ -44,7 +44,7 @@ const InnerCalendar = ({
 												? () => {
 														setSelectedDate(formatDate(date, dateFormat));
 														setTimeStamp(date);
-														//setIsCalendarOpen(false);
+														setIsCalendarOpen(false);
 												  }
 												: null
 										}
