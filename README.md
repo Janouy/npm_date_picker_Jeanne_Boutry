@@ -44,12 +44,12 @@ To use Calendar in your React project, you need to import it into your component
 
 ```
 
-import Calendar from "react-date-picker-janouy/dist/pages/Calendar";
+import CalendarWrapper from "react-date-picker-janouy/dist/pages/CalendarWrapper";
 import { useState } from "react";
 
 function MyComponent() {
     const language = "en";
-	const dateFormat = "mm.dd.yyyy";
+	const dateFormat = "MM.dd.yyyy";
     const [date, setDate] = useState();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
@@ -57,9 +57,6 @@ function MyComponent() {
         setIsCalendarOpen(true);
     };
 
-    const hideModal = () => {
-        setIsModalOpen(false);
-    };
 
   return (
     <div onMouseLeave={() => setIsCalendarOpen(false)}>
@@ -92,7 +89,7 @@ The following properties can be used to customize the EasyModale component:
 
 -   `language` (string): Determinates the calendar's language. (ex: 'en'). Click [[Here](#supported-languages) to see supported languages.
 
--   `dateFormat` (string): Determinates the date's format. (ex: 'mm/dd/yyyy').
+-   `dateFormat` (string): Determinates the date's format. (ex: 'MM/dd/yyyy').
 
 ## Supported languages:
 

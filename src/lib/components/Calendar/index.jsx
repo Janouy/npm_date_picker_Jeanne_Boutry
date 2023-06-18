@@ -7,6 +7,9 @@ import Years from "../Years";
 import InnerCalendar from "../InnerCalendar";
 import { scrollToElement } from "../../utils/functions";
 
+export const sum = (a, b) => {
+	return a + b;
+};
 const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, language, dateFormat }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();

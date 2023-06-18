@@ -1,5 +1,5 @@
 import { shortMonths, longMonths, daysPerWeek, maxCalendarDays, timeInADay } from "./const";
-import dateFormat from "dateformat";
+import { format } from "date-fns";
 
 export const scrollToElement = (element) => {
 	const el = document.querySelector(element);
@@ -37,8 +37,8 @@ export const displayCurrentMonth = (year, month) => {
 	return datesToDisplay;
 };
 //format the date according the informed format
-export const formatDate = (date, format) => {
-	if (date) return dateFormat(date, format);
+export const formatDate = (date, dateFormat) => {
+	if (date) return format(date, dateFormat);
 };
 //check if is a date
 export const isValidDate = (d) => {

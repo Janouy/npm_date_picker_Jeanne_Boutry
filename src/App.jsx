@@ -7,7 +7,7 @@ function App() {
 	const [date, setDate] = useState("");
 	const inputStyle = { width: 100, height: 14, fontSize: 12 };
 	const calendarWrapperStyle = { position: "absolute", top: 25 };
-	let defaultDateFormat = "mm/dd/yyyy";
+	let defaultDateFormat = "MM.dd.yyyy";
 	let defaultLanguage = "en";
 
 	return (

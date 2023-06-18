@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.scrollToElement = exports.formatDate = exports.displayCurrentMonth = void 0;
+exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
 var _dateformat = _interopRequireDefault(require("dateformat"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -46,4 +46,9 @@ exports.displayCurrentMonth = displayCurrentMonth;
 const formatDate = (date, format) => {
   if (date) return (0, _dateformat.default)(date, format);
 };
+//check if is a date
 exports.formatDate = formatDate;
+const isValidDate = d => {
+  return d instanceof Date && !isNaN(d);
+};
+exports.isValidDate = isValidDate;
