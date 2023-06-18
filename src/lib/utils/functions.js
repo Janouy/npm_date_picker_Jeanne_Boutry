@@ -40,3 +40,7 @@ export const displayCurrentMonth = (year, month) => {
 export const formatDate = (date, format) => {
 	if (date) return dateFormat(date, format);
 };
+//check if is a date
+export const isValidDate = (d) => {
+	return d instanceof Date && !isNaN(d);
+};

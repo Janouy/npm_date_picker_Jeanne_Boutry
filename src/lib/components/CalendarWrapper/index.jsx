@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Calendar from "../Calendar";
 import "./style.css";
 import { calendarChildren } from "../../utils/const";
-import { formatDate } from "../../utils/functions";
+import { formatDate, isValidDate } from "../../utils/functions";
 
 const CalendarWrapper = ({
 	isCalendarOpen,
@@ -14,7 +14,6 @@ const CalendarWrapper = ({
 	inputStyle,
 	calendarWrapperStyle,
 }) => {
-	const inputDateElement = useRef();
 	const handleUserKeyPress = (elt) => {
 		if (!calendarChildren.includes(elt.target.className)) {
 			setIsCalendarOpen(false);
@@ -28,12 +27,18 @@ const CalendarWrapper = ({
 		};
 	});
 
-	const checkManualInputOnBlur = (elt, format, inputDateElement) => {
+	//check and correct the input if user tape a wrong date in it
+	const checkManualInputOnBlur = (elt, format) => {
 		let innerInput = elt.target.value;
-		if (!Date.parse(innerInput)) {
-			inputDateElement.current.defaultValue = selectedDate;
+		//if input's value is empty or is a valid date, do nothing
+		if (isValidDate(innerInput) || innerInput === "") {
+			return;
+			// if it is not a date, display the today's date
+		} else if (!Date.parse(innerInput)) {
+			elt.target.value = selectedDate;
 			elt.target.value = formatDate(Date.now(), format);
 			handleSelectedDate(formatDate(Date.now(), format));
+			// if it s a date but not in the choosen format
 		} else {
 			elt.target.value = formatDate(new Date(innerInput), format);
 			handleSelectedDate(formatDate(new Date(innerInput), format));
@@ -51,8 +56,7 @@ const CalendarWrapper = ({
 				style={inputStyle}
 				onChange={handleChange}
 				onPointerDown={() => setIsCalendarOpen(true)}
-				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat, inputDateElement)}
-				ref={inputDateElement}
+				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat)}
 			></input>
 			<Calendar
 				isCalendarOpen={isCalendarOpen}
