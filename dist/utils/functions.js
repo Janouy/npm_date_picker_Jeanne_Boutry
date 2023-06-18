@@ -5,8 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
-var _dateformat = _interopRequireDefault(require("dateformat"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _dateFns = require("date-fns");
 const scrollToElement = element => {
   const el = document.querySelector(element);
   if (el) {
@@ -43,8 +42,8 @@ const displayCurrentMonth = (year, month) => {
 };
 //format the date according the informed format
 exports.displayCurrentMonth = displayCurrentMonth;
-const formatDate = (date, format) => {
-  if (date) return (0, _dateformat.default)(date, format);
+const formatDate = (date, dateFormat) => {
+  if (date) return (0, _dateFns.format)(date, dateFormat);
 };
 //check if is a date
 exports.formatDate = formatDate;

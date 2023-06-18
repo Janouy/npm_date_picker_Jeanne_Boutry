@@ -55,7 +55,7 @@ const CalendarWrapper = ({
 				value={selectedDate}
 				style={inputStyle}
 				onChange={handleChange}
-				onPointerDown={() => setIsCalendarOpen(true)}
+				onPointerDown={() => setIsCalendarOpen(!isCalendarOpen)}
 				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat)}
 			></input>
 			<Calendar
