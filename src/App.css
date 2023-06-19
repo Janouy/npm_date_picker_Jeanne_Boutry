@@ -1,3 +1,6 @@
 .App-react-date-picker-janouy {
 	text-align: center;
 }
+body {
+	height: 100vh;
+}

@@ -22,7 +22,7 @@ const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpe
 			<div
 				className={
 					monthOptionIsOpen
-						? "selectOptions-react-date-picker-janouy"
+						? "selectMonthsOptions-react-date-picker-janouy"
 						: "selectOptionClosed-react-date-picker-janouy"
 				}
 			>

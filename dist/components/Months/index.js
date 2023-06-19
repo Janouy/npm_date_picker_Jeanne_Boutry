@@ -34,7 +34,7 @@ const Months = _ref => {
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: monthOptionIsOpen ? "selectOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
+    className: monthOptionIsOpen ? "selectMonthsOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
   }, months.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
     className: "selectedMonthOption-react-date-picker-janouy"

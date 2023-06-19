@@ -58,3 +58,8 @@
 	border-collapse: collapse;
 	height: 20px;
 }
+.noScroll {
+	position: fixed;
+	width: 100%;
+	overflow-y: scroll;
+}

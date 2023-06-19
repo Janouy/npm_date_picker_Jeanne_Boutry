@@ -1,10 +1,15 @@
 import { shortMonths, longMonths, daysPerWeek, maxCalendarDays, timeInADay } from "./const";
 import { format } from "date-fns";
 
-export const scrollToElement = (element) => {
+export const scrollToElement = (element, parentElement) => {
 	const el = document.querySelector(element);
-	if (el) {
-		el.scrollIntoView({ behavior: "instant" });
+	const parentEl = document.querySelector(parentElement);
+	if (el && parentEl) {
+		const childPosition = el.offsetTop;
+		parentEl.scrollTo({
+			top: childPosition,
+			behavior: "instant",
+		});
 	}
 };
 

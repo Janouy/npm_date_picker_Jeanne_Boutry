@@ -6,10 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
 var _dateFns = require("date-fns");
-const scrollToElement = element => {
+const scrollToElement = (element, parentElement) => {
   const el = document.querySelector(element);
-  if (el) {
-    el.scrollIntoView({
+  const parentEl = document.querySelector(parentElement);
+  if (el && parentEl) {
+    const childPosition = el.offsetTop;
+    parentEl.scrollTo({
+      top: childPosition,
       behavior: "instant"
     });
   }

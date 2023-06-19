@@ -28,11 +28,25 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 
 	useEffect(() => {
 		if (yearOptionIsOpen) {
-			scrollToElement(".selectedYearOption-react-date-picker-janouy");
+			scrollToElement(
+				".selectedYearOption-react-date-picker-janouy",
+				".selectYearsOptions-react-date-picker-janouy",
+				true,
+			);
 		} else if (monthOptionIsOpen) {
-			scrollToElement(".selectedMonthOption-react-date-picker-janouy");
+			scrollToElement(
+				".selectedMonthOption-react-date-picker-janouy",
+				".selectMonthsOptions-react-date-picker-janouy",
+				true,
+			);
 		}
 	}, [monthOptionIsOpen, yearOptionIsOpen]);
+	useEffect(() => {
+		if (!isCalendarOpen) {
+			setMonthOptionIsOpen(false);
+			setYearOptionIsOpen(false);
+		}
+	}, [isCalendarOpen]);
 
 	const setMonth = (monthNumber) => {
 		setChoosenMonth(monthNumber);
@@ -76,14 +90,14 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	};
 
 	useEffect(() => {
+		let calendarEl = calendarElement.current;
 		if (isCalendarOpen) {
-			calendarElement.current.addEventListener(
-				"wheel",
-				(e) => {
-					e.preventDefault();
-				},
-				{ passive: false },
-			);
+			calendarEl.addEventListener("mouseover", () => {
+				document.body.classList.add("noScroll");
+			});
+			calendarEl.addEventListener("mouseout", () => {
+				document.body.classList.remove("noScroll");
+			});
 		}
 	}, [isCalendarOpen]);
 	return (

@@ -32,7 +32,7 @@ const Years = _ref => {
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: yearOptionIsOpen ? "selectOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
+    className: yearOptionIsOpen ? "selectYearsOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
   }, _const.years.map((year, index) => year === choosenYear ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
     className: "selectedYearOption-react-date-picker-janouy"

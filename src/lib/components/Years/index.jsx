@@ -20,7 +20,7 @@ const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) 
 			<div
 				className={
 					yearOptionIsOpen
-						? "selectOptions-react-date-picker-janouy"
+						? "selectYearsOptions-react-date-picker-janouy"
 						: "selectOptionClosed-react-date-picker-janouy"
 				}
 			>
