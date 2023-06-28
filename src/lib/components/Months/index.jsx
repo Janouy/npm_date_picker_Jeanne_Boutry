@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { weekDays_options } from "../../utils/const";
 import Arrow from "../../assets/arrow.svg";
 import "./style.css";
 
-const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language }) => {
-	let months = weekDays_options.i18n[language].months;
+const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language, traducedMonths }) => {
 	const [currentMonth, setCUrrentMonth] = useState();
 	useEffect(() => {
-		setCUrrentMonth(months.find((month, index) => index === choosenMonth));
-	}, [choosenMonth, language]);
+		setCUrrentMonth(traducedMonths.find((month, index) => index === choosenMonth));
+	}, [choosenMonth, language, traducedMonths]);
 
 	return (
 		<div className="selectMonth-react-date-picker-janouy">
 			<div
 				className="selectMonthTitle-react-date-picker-janouy"
+				data-testid="selectedMonth"
 				onClick={(e) => setMonthOptionIsOpen(!monthOptionIsOpen)}
 			>
 				{currentMonth}
@@ -25,8 +24,9 @@ const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpe
 						? "selectMonthsOptions-react-date-picker-janouy"
 						: "selectOptionClosed-react-date-picker-janouy"
 				}
+				data-testid="openMonthsListContent"
 			>
-				{months.map((month, index) =>
+				{traducedMonths.map((month, index) =>
 					index === choosenMonth ? (
 						<div key={index} className="selectedMonthOption-react-date-picker-janouy">
 							{month}

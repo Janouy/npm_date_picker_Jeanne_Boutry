@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { years } from "../../utils/const";
 import Arrow from "../../assets/arrow.svg";
 import "./style.css";
 
 const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) => {
-	const [currentYear, setCurrentYear] = useState();
-	useEffect(() => {
-		setCurrentYear(years.find((year) => year === choosenYear));
-	}, [choosenYear]);
 	return (
 		<div className="selectYear-react-date-picker-janouy">
 			<div
 				className="selectYearTitle-react-date-picker-janouy"
+				data-testid="selectedYear"
 				onClick={(e) => setYearOptionIsOpen(!yearOptionIsOpen)}
 			>
-				{currentYear}
+				{choosenYear}
 				<img className="selectArrow-react-date-picker-janouy" src={Arrow} alt="arrow" />
 			</div>
 			<div
@@ -23,6 +20,7 @@ const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) 
 						? "selectYearsOptions-react-date-picker-janouy"
 						: "selectOptionClosed-react-date-picker-janouy"
 				}
+				data-testid="openYearsListContent"
 			>
 				{years.map((year, index) =>
 					year === choosenYear ? (

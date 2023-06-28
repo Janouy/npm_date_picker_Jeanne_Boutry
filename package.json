@@ -7,7 +7,7 @@
 		"components",
 		"ui"
 	],
-	"version": "0.1.64",
+	"version": "0.1.66",
 	"private": false,
 	"main": "dist/index.js",
 	"module": "dist/index.js",
@@ -20,9 +20,10 @@
 		"url": "git+https://github.com/Janouy/npm_publish_test.git"
 	},
 	"dependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@babel/polyfill": "^7.12.1",
 		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/react": "^13.4.0",
+		"@testing-library/react": "13.1",
 		"@testing-library/user-event": "^13.5.0",
 		"date-fns": "^2.30.0",
 		"prettier": "^2.8.7",

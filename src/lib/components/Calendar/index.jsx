@@ -10,7 +10,15 @@ import { scrollToElement } from "../../utils/functions";
 export const sum = (a, b) => {
 	return a + b;
 };
-const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, language, dateFormat }) => {
+const Calendar = ({
+	isCalendarOpen,
+	setIsCalendarOpen,
+	handleSelectedDate,
+	language,
+	dateFormat,
+	traducedMonths,
+	weekDays,
+}) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
 	const [choosenYear, setChoosenYear] = useState("");
@@ -25,7 +33,6 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 	useEffect(() => {
 		displayToday();
 	}, []);
-
 	useEffect(() => {
 		if (yearOptionIsOpen) {
 			scrollToElement(
@@ -109,10 +116,23 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 				onClick={closeLists}
 				onWheel={(event) => changeMonth(event)}
 				ref={calendarElement}
+				data-testid="calendar"
 			>
 				<div className="selectWrapper-react-date-picker-janouy">
-					<img className="leftArrow-react-date-picker-janouy" src={Arrow} alt="arrow" onClick={goPrevMonth} />
-					<img className="house-react-date-picker-janouy" src={House} alt="arrow" onClick={displayToday} />
+					<img
+						className="leftArrow-react-date-picker-janouy"
+						src={Arrow}
+						alt="left arrow"
+						onClick={goPrevMonth}
+						data-testid="leftArrow"
+					/>
+					<img
+						className="house-react-date-picker-janouy"
+						src={House}
+						alt="house"
+						onClick={displayToday}
+						data-testid="house"
+					/>
 					<div className="labelsWrapper-react-date-picker-janouy">
 						<Months
 							choosenMonth={choosenMonth}
@@ -120,6 +140,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 							setMonth={setMonth}
 							setMonthOptionIsOpen={setMonthOptionIsOpen}
 							language={language}
+							traducedMonths={traducedMonths}
 						/>
 						<Years
 							choosenYear={choosenYear}
@@ -131,8 +152,9 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 					<img
 						className="rightArrow-react-date-picker-janouy"
 						src={Arrow}
-						alt="arrow"
+						alt="right arrow"
 						onClick={goNextMonth}
+						data-testid="rightArrow"
 					/>
 				</div>
 				<InnerCalendar
@@ -141,7 +163,7 @@ const Calendar = ({ isCalendarOpen, setIsCalendarOpen, handleSelectedDate, langu
 					setSelectedDate={handleSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
 					dateFormat={dateFormat}
-					language={language}
+					weekDays={weekDays}
 				/>
 			</div>
 		</>

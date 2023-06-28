@@ -13,12 +13,16 @@ const CalendarWrapper = ({
 	selectedDate,
 	inputStyle,
 	calendarWrapperStyle,
+	traducedMonths,
+	weekDays,
 }) => {
+	//close the calendar if user clicks outside
 	const handleUserKeyPress = (elt) => {
 		if (!calendarChildren.includes(elt.target.className)) {
 			setIsCalendarOpen(false);
 		}
 	};
+
 	useEffect(() => {
 		window.addEventListener("click", handleUserKeyPress);
 
@@ -57,6 +61,7 @@ const CalendarWrapper = ({
 				onChange={handleChange}
 				onPointerDown={() => setIsCalendarOpen(!isCalendarOpen)}
 				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat)}
+				data-testid="input"
 			></input>
 			<Calendar
 				isCalendarOpen={isCalendarOpen}
@@ -64,6 +69,8 @@ const CalendarWrapper = ({
 				handleSelectedDate={handleSelectedDate}
 				language={language}
 				dateFormat={dateFormat}
+				traducedMonths={traducedMonths}
+				weekDays={weekDays}
 			/>
 		</div>
 	);
