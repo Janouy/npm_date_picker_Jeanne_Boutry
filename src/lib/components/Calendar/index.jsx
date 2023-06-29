@@ -164,6 +164,7 @@ const Calendar = ({
 					setIsCalendarOpen={setIsCalendarOpen}
 					dateFormat={dateFormat}
 					weekDays={weekDays}
+					language={language}
 				/>
 			</div>
 		</>

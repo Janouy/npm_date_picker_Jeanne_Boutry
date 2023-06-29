@@ -5,6 +5,6 @@ let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 describe("Years", () => {
 	it("Should render without crash", async () => {
-		render(<InnerCalendar weekDays={weekDays} choosenYear={2023} choosenMonth={5} />);
+		render(<InnerCalendar weekDays={weekDays} choosenYear={2023} choosenMonth={5} language={"en"} />);
 	});
 });

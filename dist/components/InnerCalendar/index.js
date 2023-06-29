@@ -16,8 +16,8 @@ const InnerCalendar = _ref => {
     choosenMonth,
     setSelectedDate,
     setIsCalendarOpen,
-    language,
-    dateFormat
+    dateFormat,
+    language
   } = _ref;
   const [timeStamp, setTimeStamp] = (0, _react.useState)();
   let weekDays = _const.weekDays_options.i18n[language].dayOfWeekShort;

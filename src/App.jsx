@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CalendarWrapper from "./lib/components/CalendarWrapper";
-import { weekDays_options } from "../src/lib/utils/const";
+
 import "./App.css";
 
 function App() {
@@ -10,8 +10,6 @@ function App() {
 	const calendarWrapperStyle = { position: "absolute", top: 25 };
 	let defaultDateFormat = "MM.dd.yyyy";
 	let defaultLanguage = "en";
-	let traducedMonths = weekDays_options.i18n[defaultLanguage].months;
-	let weekDays = weekDays_options.i18n[defaultLanguage].dayOfWeekShort;
 
 	return (
 		<div className="App-react-date-picker-janouy">
@@ -24,8 +22,6 @@ function App() {
 				dateFormat={defaultDateFormat}
 				inputStyle={inputStyle}
 				calendarWrapperStyle={calendarWrapperStyle}
-				traducedMonths={traducedMonths}
-				weekDays={weekDays}
 			/>
 		</div>
 	);

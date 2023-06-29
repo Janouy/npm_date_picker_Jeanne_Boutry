@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _const = require("../../utils/const");
 var _arrow = _interopRequireDefault(require("../../assets/arrow.svg"));
+var _const = require("../../utils/const");
 require("./style.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -19,23 +19,25 @@ const Months = _ref => {
     setMonthOptionIsOpen,
     language
   } = _ref;
-  let months = _const.weekDays_options.i18n[language].months;
   const [currentMonth, setCUrrentMonth] = (0, _react.useState)();
+  let traducedMonths = _const.weekDays_options.i18n[language].months;
   (0, _react.useEffect)(() => {
-    setCUrrentMonth(months.find((month, index) => index === choosenMonth));
-  }, [choosenMonth, language]);
+    setCUrrentMonth(traducedMonths.find((month, index) => index === choosenMonth));
+  }, [choosenMonth, language, traducedMonths]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonth-react-date-picker-janouy"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonthTitle-react-date-picker-janouy",
+    "data-testid": "selectedMonth",
     onClick: e => setMonthOptionIsOpen(!monthOptionIsOpen)
   }, currentMonth, /*#__PURE__*/_react.default.createElement("img", {
     className: "selectArrow-react-date-picker-janouy",
     src: _arrow.default,
     alt: "arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: monthOptionIsOpen ? "selectMonthsOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy"
-  }, months.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
+    className: monthOptionIsOpen ? "selectMonthsOptions-react-date-picker-janouy" : "selectOptionClosed-react-date-picker-janouy",
+    "data-testid": "openMonthsListContent"
+  }, traducedMonths.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
     className: "selectedMonthOption-react-date-picker-janouy"
   }, month) : /*#__PURE__*/_react.default.createElement("div", {

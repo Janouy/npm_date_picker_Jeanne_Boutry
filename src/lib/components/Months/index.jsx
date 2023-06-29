@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Arrow from "../../assets/arrow.svg";
+import { weekDays_options } from "../../utils/const";
 import "./style.css";
 
-const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language, traducedMonths }) => {
+const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language }) => {
 	const [currentMonth, setCUrrentMonth] = useState();
+	let traducedMonths = weekDays_options.i18n[language].months;
 	useEffect(() => {
 		setCUrrentMonth(traducedMonths.find((month, index) => index === choosenMonth));
 	}, [choosenMonth, language, traducedMonths]);

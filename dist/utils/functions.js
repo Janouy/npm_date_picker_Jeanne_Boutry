@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
+exports.selectedMonthDatesArray = exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
 var _dateFns = require("date-fns");
 const scrollToElement = (element, parentElement) => {
@@ -17,16 +17,21 @@ const scrollToElement = (element, parentElement) => {
     });
   }
 };
-
-//display the days of the current month in the calendar according to the choosen year and month
 exports.scrollToElement = scrollToElement;
-const displayCurrentMonth = (year, month) => {
+const selectedMonthDatesArray = (year, month) => {
   let datesArray = [];
-  let datesToDisplay = [];
   //store the maxCalendarDays(42) days according to the users's choosen month and year in the calendar
   for (let dayIt = 1; dayIt <= _const.maxCalendarDays; dayIt++) {
     datesArray.push(new Date(year, month, dayIt));
   }
+  return datesArray;
+};
+
+//display the days of the current month in the calendar according to the choosen year and month
+exports.selectedMonthDatesArray = selectedMonthDatesArray;
+const displayCurrentMonth = (year, month) => {
+  let datesToDisplay = [];
+  const datesArray = selectedMonthDatesArray(year, month);
   // determinate the first week day of the month
   const firstWeekDayOfMonth = datesArray[0].getDay();
   //add end previous month last days to complete the begining of the calendar
