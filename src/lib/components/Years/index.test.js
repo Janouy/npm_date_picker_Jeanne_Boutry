@@ -1,5 +1,5 @@
 import Years from "./";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("Years", () => {
 	it("Should render without crash", async () => {
@@ -19,5 +19,24 @@ describe("Years", () => {
 		for (let date = 1950; date <= 2050; date++) {
 			expect(yearsList.innerHTML).toContain(date.toString());
 		}
+	});
+	describe("On click on a year in the list", () => {
+		it("Should close the list and log the choosen year", async () => {
+			const mockSetChoosenYear = jest.fn();
+			const mockSetYearOptionIsOpen = jest.fn();
+			render(
+				<Years
+					choosenYear={"2023"}
+					language={"en"}
+					setYearOptionIsOpen={mockSetYearOptionIsOpen}
+					setChoosenYear={mockSetChoosenYear}
+				/>,
+			);
+			screen.getAllByTestId("oneYear").forEach((year) => {
+				fireEvent.click(year);
+				expect(mockSetChoosenYear).toBeCalledWith(Number(year.textContent));
+			});
+			expect(mockSetYearOptionIsOpen).toBeCalledWith(false);
+		});
 	});
 });

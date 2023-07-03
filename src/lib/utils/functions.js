@@ -1,5 +1,4 @@
 import { shortMonths, longMonths, daysPerWeek, maxCalendarDays, timeInADay } from "./const";
-import { format } from "date-fns";
 
 export const scrollToElement = (element, parentElement) => {
 	const el = document.querySelector(element);
@@ -46,10 +45,7 @@ export const displayCurrentMonth = (year, month) => {
 
 	return datesToDisplay;
 };
-//format the date according the informed format
-export const formatDate = (date, dateFormat) => {
-	if (date) return format(date, dateFormat);
-};
+
 //check if is a date
 export const isValidDate = (d) => {
 	return d instanceof Date && !isNaN(d);

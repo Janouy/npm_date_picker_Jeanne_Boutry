@@ -1,3 +1,4 @@
+import React from "react";
 import Calendar from "./";
 import { render, screen, fireEvent } from "@testing-library/react";
 
@@ -16,7 +17,11 @@ let months = [
 	"November",
 	"December",
 ];
-const currentMonth = new Date().getMonth();
+let currentMonth;
+beforeAll(() => {
+	currentMonth = new Date().getMonth();
+});
+
 describe("Calendar", () => {
 	it("Should render without crash", async () => {
 		render(<Calendar weekDays={weekDays} traducedMonths={months} language={"en"} />);

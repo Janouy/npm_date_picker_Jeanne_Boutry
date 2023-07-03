@@ -1,5 +1,5 @@
 import Months from "./";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 let months = [
 	"January",
@@ -34,5 +34,25 @@ describe("Years", () => {
 		for (let monthIt = 0; monthIt <= 11; monthIt++) {
 			expect(monthsList.innerHTML).toContain(months[monthIt]);
 		}
+	});
+
+	describe("On click on a month in the list", () => {
+		it("Should close the list and log the choosen month", async () => {
+			const mockSetChoosenMonth = jest.fn();
+			const mockSetMonthOptionIsOpen = jest.fn();
+			render(
+				<Months
+					traducedMonths={months}
+					language={"en"}
+					setMonthOptionIsOpen={mockSetMonthOptionIsOpen}
+					setChoosenMonth={mockSetChoosenMonth}
+				/>,
+			);
+			screen.getAllByTestId("oneMonth").forEach((month, index) => {
+				fireEvent.click(month);
+				expect(mockSetChoosenMonth).toBeCalledWith(index);
+			});
+			expect(mockSetMonthOptionIsOpen).toBeCalledWith(false);
+		});
 	});
 });

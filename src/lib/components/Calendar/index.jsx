@@ -7,9 +7,6 @@ import Years from "../Years";
 import InnerCalendar from "../InnerCalendar";
 import { scrollToElement } from "../../utils/functions";
 
-export const sum = (a, b) => {
-	return a + b;
-};
 const Calendar = ({
 	isCalendarOpen,
 	setIsCalendarOpen,
@@ -55,15 +52,6 @@ const Calendar = ({
 		}
 	}, [isCalendarOpen]);
 
-	const setMonth = (monthNumber) => {
-		setChoosenMonth(monthNumber);
-		setMonthOptionIsOpen(false);
-	};
-
-	const setYear = (year) => {
-		setChoosenYear(Number(year));
-		setYearOptionIsOpen(false);
-	};
 	const goNextMonth = () => {
 		if (choosenMonth < 11) {
 			setChoosenMonth(choosenMonth + 1);
@@ -137,7 +125,7 @@ const Calendar = ({
 						<Months
 							choosenMonth={choosenMonth}
 							monthOptionIsOpen={monthOptionIsOpen}
-							setMonth={setMonth}
+							setChoosenMonth={setChoosenMonth}
 							setMonthOptionIsOpen={setMonthOptionIsOpen}
 							language={language}
 							traducedMonths={traducedMonths}
@@ -146,7 +134,7 @@ const Calendar = ({
 							choosenYear={choosenYear}
 							setYearOptionIsOpen={setYearOptionIsOpen}
 							yearOptionIsOpen={yearOptionIsOpen}
-							setYear={setYear}
+							setChoosenYear={setChoosenYear}
 						/>
 					</div>
 					<img

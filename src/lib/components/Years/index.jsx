@@ -3,7 +3,11 @@ import { years } from "../../utils/const";
 import Arrow from "../../assets/arrow.svg";
 import "./style.css";
 
-const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) => {
+const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setChoosenYear }) => {
+	const setYear = (year) => {
+		setChoosenYear(Number(year));
+		setYearOptionIsOpen(false);
+	};
 	return (
 		<div className="selectYear-react-date-picker-janouy">
 			<div
@@ -30,6 +34,7 @@ const Years = ({ choosenYear, setYearOptionIsOpen, yearOptionIsOpen, setYear }) 
 					) : (
 						<div
 							className="option-react-date-picker-janouy"
+							data-testid="oneYear"
 							key={index}
 							onClick={(e) => setYear(e.target.innerHTML)}
 						>

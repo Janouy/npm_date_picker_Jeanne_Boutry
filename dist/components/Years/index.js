@@ -14,8 +14,12 @@ const Years = _ref => {
     choosenYear,
     setYearOptionIsOpen,
     yearOptionIsOpen,
-    setYear
+    setChoosenYear
   } = _ref;
+  const setYear = year => {
+    setChoosenYear(Number(year));
+    setYearOptionIsOpen(false);
+  };
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectYear-react-date-picker-janouy"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -34,6 +38,7 @@ const Years = _ref => {
     className: "selectedYearOption-react-date-picker-janouy"
   }, year) : /*#__PURE__*/_react.default.createElement("div", {
     className: "option-react-date-picker-janouy",
+    "data-testid": "oneYear",
     key: index,
     onClick: e => setYear(e.target.innerHTML)
   }, year))));

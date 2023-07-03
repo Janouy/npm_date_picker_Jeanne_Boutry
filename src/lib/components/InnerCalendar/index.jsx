@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { today } from "../../utils/const";
-import { displayCurrentMonth, formatDate } from "../../utils/functions";
+import { displayCurrentMonth } from "../../utils/functions";
+import { format } from "date-fns";
 import { weekDays_options } from "../../utils/const";
 import "./style.css";
 
@@ -31,10 +32,11 @@ const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalend
 								>
 									<div
 										className="date-react-date-picker-janouy"
+										data-testid={date}
 										onClick={
 											date.getMonth() === choosenMonth
 												? () => {
-														setSelectedDate(formatDate(date, dateFormat));
+														setSelectedDate(format(date, dateFormat));
 														setTimeStamp(date);
 														setIsCalendarOpen(false);
 												  }

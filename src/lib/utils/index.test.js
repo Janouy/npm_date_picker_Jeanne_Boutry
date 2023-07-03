@@ -1,4 +1,4 @@
-import { formatDate, isValidDate, displayCurrentMonth, selectedMonthDatesArray } from "./functions";
+import { isValidDate, displayCurrentMonth, selectedMonthDatesArray } from "./functions";
 import { maxCalendarDays, minCalendarDays } from "./const";
 
 let year;
@@ -11,18 +11,6 @@ beforeAll(() => {
 	month = Math.floor(Math.random() * (11 - 0 + 1) + 0).toString();
 	datesArray = selectedMonthDatesArray(year, month);
 	currentMonthDaysArray = displayCurrentMonth(year, month);
-});
-
-describe("The 'formatDate' function", () => {
-	it("Should return a formated date", () => {
-		const date = new Date(2023, 5, 18);
-		const dateFormat = "MM/dd/yyyy";
-		expect(formatDate(date, dateFormat)).toEqual("06/18/2023");
-	});
-	it("Shouldn't return a date if there is no date", () => {
-		const dateFormat = "MM/dd/yyyy";
-		expect(formatDate("", dateFormat)).toBeUndefined();
-	});
 });
 
 describe("The 'isValidDate' function", () => {

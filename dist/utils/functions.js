@@ -3,9 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectedMonthDatesArray = exports.scrollToElement = exports.isValidDate = exports.formatDate = exports.displayCurrentMonth = void 0;
+exports.selectedMonthDatesArray = exports.scrollToElement = exports.isValidDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
-var _dateFns = require("date-fns");
 const scrollToElement = (element, parentElement) => {
   const el = document.querySelector(element);
   const parentEl = document.querySelector(parentElement);
@@ -48,13 +47,9 @@ const displayCurrentMonth = (year, month) => {
   }
   return datesToDisplay;
 };
-//format the date according the informed format
-exports.displayCurrentMonth = displayCurrentMonth;
-const formatDate = (date, dateFormat) => {
-  if (date) return (0, _dateFns.format)(date, dateFormat);
-};
+
 //check if is a date
-exports.formatDate = formatDate;
+exports.displayCurrentMonth = displayCurrentMonth;
 const isValidDate = d => {
   return d instanceof Date && !isNaN(d);
 };

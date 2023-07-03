@@ -15,8 +15,8 @@ const Months = _ref => {
   let {
     choosenMonth,
     monthOptionIsOpen,
-    setMonth,
     setMonthOptionIsOpen,
+    setChoosenMonth,
     language
   } = _ref;
   const [currentMonth, setCUrrentMonth] = (0, _react.useState)();
@@ -24,6 +24,10 @@ const Months = _ref => {
   (0, _react.useEffect)(() => {
     setCUrrentMonth(traducedMonths.find((month, index) => index === choosenMonth));
   }, [choosenMonth, language, traducedMonths]);
+  const setMonth = monthNumber => {
+    setChoosenMonth(monthNumber);
+    setMonthOptionIsOpen(false);
+  };
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "selectMonth-react-date-picker-janouy"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -39,9 +43,11 @@ const Months = _ref => {
     "data-testid": "openMonthsListContent"
   }, traducedMonths.map((month, index) => index === choosenMonth ? /*#__PURE__*/_react.default.createElement("div", {
     key: index,
-    className: "selectedMonthOption-react-date-picker-janouy"
+    className: "selectedMonthOption-react-date-picker-janouy",
+    "data-testid": "currentMonth"
   }, month) : /*#__PURE__*/_react.default.createElement("div", {
     className: "option-react-date-picker-janouy",
+    "data-testid": "oneMonth",
     key: index,
     onClick: e => setMonth(index)
   }, month))));

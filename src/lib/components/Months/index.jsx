@@ -3,13 +3,17 @@ import Arrow from "../../assets/arrow.svg";
 import { weekDays_options } from "../../utils/const";
 import "./style.css";
 
-const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpen, language }) => {
+const Months = ({ choosenMonth, monthOptionIsOpen, setMonthOptionIsOpen, setChoosenMonth, language }) => {
 	const [currentMonth, setCUrrentMonth] = useState();
 	let traducedMonths = weekDays_options.i18n[language].months;
 	useEffect(() => {
 		setCUrrentMonth(traducedMonths.find((month, index) => index === choosenMonth));
 	}, [choosenMonth, language, traducedMonths]);
 
+	const setMonth = (monthNumber) => {
+		setChoosenMonth(monthNumber);
+		setMonthOptionIsOpen(false);
+	};
 	return (
 		<div className="selectMonth-react-date-picker-janouy">
 			<div
@@ -30,11 +34,20 @@ const Months = ({ choosenMonth, monthOptionIsOpen, setMonth, setMonthOptionIsOpe
 			>
 				{traducedMonths.map((month, index) =>
 					index === choosenMonth ? (
-						<div key={index} className="selectedMonthOption-react-date-picker-janouy">
+						<div
+							key={index}
+							className="selectedMonthOption-react-date-picker-janouy"
+							data-testid="currentMonth"
+						>
 							{month}
 						</div>
 					) : (
-						<div className="option-react-date-picker-janouy" key={index} onClick={(e) => setMonth(index)}>
+						<div
+							className="option-react-date-picker-janouy"
+							data-testid="oneMonth"
+							key={index}
+							onClick={(e) => setMonth(index)}
+						>
 							{month}
 						</div>
 					),
