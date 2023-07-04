@@ -65,6 +65,8 @@ const CalendarWrapper = ({
 				onPointerDown={() => setIsCalendarOpen(!isCalendarOpen)}
 				onBlur={(elt) => checkManualInputOnBlur(elt, dateFormat)}
 				data-testid="input"
+				autoComplete="no"
+				required
 			></input>
 			<Calendar
 				isCalendarOpen={isCalendarOpen}
