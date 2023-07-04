@@ -8,6 +8,7 @@ react-test-janouy is a simple React component that allows you to add a calendar 
 
 -   [Main features](#main-features)
 -   [Installation](#installation)
+-   [Technologies](#technologies-&&-dependencies)
 -   [Usage](#usage)
 -   [Customizable properties](#customizable-properties)
 
@@ -32,11 +33,12 @@ npm i react-test-janouy
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![React](https://img.shields.io/badge/react-v18.2.0-61dafb?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-## Technologies
+## Technologies && dependencies
 
 -   JS
 -   CSS
 -   React
+-   date-fns
 
 ## Usage
 
@@ -44,12 +46,14 @@ To use Calendar in your React project, you need to import it into your component
 
 ```
 
-import CalendarWrapper from "react-date-picker-janouy/dist/pages/CalendarWrapper";
+import Calendar from "react-date-picker-janouy/dist/components/CalendarWrapper";
 import { useState } from "react";
 
 function MyComponent() {
     const language = "en";
-	const dateFormat = "MM.dd.yyyy";
+	  const dateFormat = "MM.dd.yyyy";
+    const inputStyle = { width: 197, height: 25, fontSize: 13 };
+    const ariaLabelName = "dateInput";
     const [date, setDate] = useState();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
@@ -68,6 +72,8 @@ function MyComponent() {
             handleSelectedDate={(date) => setDate(date)}
             language={language}
             dateFormat={dateFormat}
+            inputStyle={inputStyle}
+						ariaLabelName={ariaLabelName}
         />
 	</div>
   );
@@ -90,6 +96,10 @@ The following properties can be used to customize the EasyModale component:
 -   `language` (string): Determinates the calendar's language. (ex: 'en'). Click [[Here](#supported-languages) to see supported languages.
 
 -   `dateFormat` (string): Determinates the date's format. (ex: 'MM/dd/yyyy').
+
+-   `inputStyle` (object) : Set the input apparence.
+
+-   `ariaLabelName` (string): If you want to add a personal 'name' && 'aria-label' to your input.
 
 ## Supported languages:
 
