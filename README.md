@@ -8,7 +8,7 @@ react-test-janouy is a simple React component that allows you to add a calendar 
 
 -   [Main features](#main-features)
 -   [Installation](#installation)
--   [Technologies](#technologies-&&-dependencies)
+-   [Technologies](#technologies-&-dependencies)
 -   [Usage](#usage)
 -   [Customizable properties](#customizable-properties)
 
@@ -20,10 +20,10 @@ react-test-janouy is a simple React component that allows you to add a calendar 
 
 ## Installation
 
-To install React Easy Modale in your project, you can use NPM:
+To install react-date-picker-janouy in your project, you can use NPM:
 
 ```
-npm i react-test-janouy
+npm i react-date-picker-janouy
 
 ```
 
@@ -33,7 +33,7 @@ npm i react-test-janouy
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![React](https://img.shields.io/badge/react-v18.2.0-61dafb?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-## Technologies && dependencies
+## Technologies & dependencies
 
 -   JS
 -   CSS
@@ -51,30 +51,27 @@ import { useState } from "react";
 
 function MyComponent() {
     const language = "en";
-	  const dateFormat = "MM.dd.yyyy";
+    const dateFormat = "MM.dd.yyyy";
     const inputStyle = { width: 197, height: 25, fontSize: 13 };
-    const ariaLabelName = "dateInput";
     const [date, setDate] = useState();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-
+    const ariaLabelName = "dateInput";
     const showCalendar = () => {
         setIsCalendarOpen(true);
     };
 
-
   return (
-    <div onMouseLeave={() => setIsCalendarOpen(false)}>
-        <div onClick={() => showCalendar()}>Date :</div>
-        <Calendar
-            isCalendarOpen={isCalendarOpen}
-            setIsCalendarOpen={setIsCalendarOpen}
-            selectedDate={date}
-            handleSelectedDate={(date) => setDate(date)}
-            language={language}
-            dateFormat={dateFormat}
-            inputStyle={inputStyle}
-						ariaLabelName={ariaLabelName}
-        />
+    <div>
+       <Calendar
+          isCalendarOpen={isCalendarOpen}
+          setIsCalendarOpen={setIsCalendarOpen}
+          selectedDate={date}
+          handleSelectedDate={(date) => setDate(date)}
+          language={language}
+          dateFormat={dateFormat}
+          inputStyle={inputStyle}
+          ariaLabelName={ariaLabelName}
+			/>
 	</div>
   );
 }
@@ -85,21 +82,23 @@ function MyComponent() {
 
 The following properties can be used to customize the EasyModale component:
 
--   `isCalendarOpen` (boolean): Determines whether the calendar is currently open or not.
+-   `isCalendarOpen*` (boolean): Determines whether the calendar is currently open or not.
 
--   `setIsCalendarOpen` (function): A function that determines if the calendar must be closed or opened with an event.
+-   `setIsCalendarOpen*` (function): A function that changes the calendarOpen state.
 
--   `selectedDate` (string): A string that represents the date on which the user clicked.
+-   `selectedDate*` (string): A string that represents the date on which the user clicked.
 
--   `handleSelectedDate` (function): A function that determines the date on which the user clicked.
+-   `handleSelectedDate*` (function): A function that changes selectedDate's value.
 
--   `language` (string): Determinates the calendar's language. (ex: 'en'). Click [[Here](#supported-languages) to see supported languages.
+-   `language` (string): Determinates the calendar's language. (default: 'en'). Click [[Here](#supported-languages) to see supported languages.
 
--   `dateFormat` (string): Determinates the date's format. (ex: 'MM/dd/yyyy').
+-   `dateFormat` (string): Determinates the selectedDate's format. (default: 'MM/dd/yyyy').
 
 -   `inputStyle` (object) : Set the input apparence.
 
--   `ariaLabelName` (string): If you want to add a personal 'name' && 'aria-label' to your input.
+-   `ariaLabelName` (string): If you want to add a personal 'name' && 'aria-label' to your input. (default: dateInput)
+
+*   required
 
 ## Supported languages:
 
