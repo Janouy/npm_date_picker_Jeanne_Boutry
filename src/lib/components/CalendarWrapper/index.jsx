@@ -72,6 +72,7 @@ const CalendarWrapper = ({
 				isCalendarOpen={isCalendarOpen}
 				setIsCalendarOpen={setIsCalendarOpen}
 				handleSelectedDate={handleSelectedDate}
+				selectedDate={selectedDate}
 				language={language}
 				dateFormat={dateFormat}
 				traducedMonths={traducedMonths}

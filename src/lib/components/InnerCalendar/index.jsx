@@ -5,22 +5,43 @@ import { format } from "date-fns";
 import { weekDays_options } from "../../utils/const";
 import "./style.css";
 
-const InnerCalendar = ({ choosenYear, choosenMonth, setSelectedDate, setIsCalendarOpen, dateFormat, language }) => {
+const InnerCalendar = ({
+	choosenYear,
+	choosenMonth,
+	setSelectedDate,
+	setIsCalendarOpen,
+	dateFormat,
+	language,
+	selectedDate,
+}) => {
 	const [timeStamp, setTimeStamp] = useState();
 	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
+
 	return (
 		<>
 			<div className="calendarRow-react-date-picker-janouy">
-				{weekDays.map((day, dayIndex) => (
-					<div key={dayIndex}>
-						<div className="day-react-date-picker-janouy">{day}</div>
+				{weekDays.map((weekDay, weekDayIndex) => (
+					<div key={weekDayIndex}>
+						<div className="weekDay-react-date-picker-janouy">{weekDay}</div>
 						{displayCurrentMonth(choosenYear.toString(), choosenMonth.toString()).map((date, index) =>
-							date.getDay() === dayIndex ? (
+							date.getDay() === weekDayIndex ? (
 								<div
 									className={
-										date.getDate() === today.getDate() &&
-										date.getMonth() === today.getMonth() &&
-										choosenMonth === today.getMonth()
+										(date.getDate() === today.getDate() &&
+											date.getMonth() === today.getMonth() &&
+											choosenMonth === today.getMonth() &&
+											date.getFullYear() === today.getFullYear() &&
+											!selectedDate) ||
+										(date.getDate() === timeStamp?.getDate() &&
+											date.getMonth() === timeStamp?.getMonth() &&
+											choosenMonth === timeStamp?.getMonth() &&
+											date.getFullYear() === timeStamp?.getFullYear())
+											? "selectedDay-react-date-picker-janouy"
+											: date.getDate() === today.getDate() &&
+											  date.getMonth() === today.getMonth() &&
+											  choosenMonth === today.getMonth() &&
+											  date.getFullYear() === today.getFullYear() &&
+											  selectedDate
 											? "today-react-date-picker-janouy"
 											: date.getMonth() !== choosenMonth
 											? "otherMonthDay-react-date-picker-janouy"

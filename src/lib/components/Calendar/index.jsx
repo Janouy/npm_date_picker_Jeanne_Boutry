@@ -15,6 +15,7 @@ const Calendar = ({
 	dateFormat,
 	traducedMonths,
 	weekDays,
+	selectedDate,
 }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
@@ -150,6 +151,7 @@ const Calendar = ({
 					choosenMonth={choosenMonth}
 					setSelectedDate={handleSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
+					selectedDate={selectedDate}
 					dateFormat={dateFormat}
 					weekDays={weekDays}
 					language={language}

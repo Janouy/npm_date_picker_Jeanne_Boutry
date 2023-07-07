@@ -46,7 +46,7 @@
 .selectArrow-react-date-picker-janouy:hover {
 	filter: brightness(0) saturate(100%);
 }
-.day-react-date-picker-janouy {
+.weekDay-react-date-picker-janouy {
 	font-weight: 700;
 	text-align: center;
 	color: #999;
