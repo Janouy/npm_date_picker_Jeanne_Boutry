@@ -10,9 +10,9 @@ import { scrollToElement } from "../../utils/functions";
 const Calendar = ({
 	isCalendarOpen,
 	setIsCalendarOpen,
-	handleSelectedDate,
+	setSelectedDate,
 	language,
-	dateFormat,
+	selectedDateFormat,
 	traducedMonths,
 	weekDays,
 	selectedDate,
@@ -24,6 +24,7 @@ const Calendar = ({
 	const [monthOptionIsOpen, setMonthOptionIsOpen] = useState(false);
 	const [yearOptionIsOpen, setYearOptionIsOpen] = useState(false);
 	const calendarElement = useRef();
+	//get the infos to display the today's month when calendar is opened
 	const displayToday = () => {
 		setChoosenMonth(currentMonth);
 		setChoosenYear(currentYear);
@@ -84,7 +85,7 @@ const Calendar = ({
 			}
 		}
 	};
-
+	//prevent page scoll when calendar is open
 	useEffect(() => {
 		let calendarEl = calendarElement.current;
 		if (isCalendarOpen) {
@@ -96,6 +97,7 @@ const Calendar = ({
 			});
 		}
 	}, [isCalendarOpen]);
+
 	return (
 		<>
 			<div
@@ -149,10 +151,10 @@ const Calendar = ({
 				<InnerCalendar
 					choosenYear={choosenYear}
 					choosenMonth={choosenMonth}
-					setSelectedDate={handleSelectedDate}
+					setSelectedDate={setSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
 					selectedDate={selectedDate}
-					dateFormat={dateFormat}
+					selectedDateFormat={selectedDateFormat}
 					weekDays={weekDays}
 					language={language}
 				/>

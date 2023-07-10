@@ -40,7 +40,7 @@ describe("CalendarWrapper", () => {
 					weekDays={weekDaysList}
 					traducedMonths={months}
 					selectedDate={"06.06.2023"}
-					dateFormat={"MM.dd.yyyy"}
+					selectedDateFormat={"MM.dd.yyyy"}
 				/>,
 			);
 			expect(screen.getByTestId("input").value).toBe("06.06.2023");
@@ -78,13 +78,13 @@ describe("CalendarWrapper", () => {
 		});
 		describe("User change the calendar input", () => {
 			it("Should display the changes in the input", async () => {
-				const mockHandleSelectedDate = jest.fn();
+				const mockSetSelectedDate = jest.fn();
 				const setup = () => {
 					const utils = render(
 						<CalendarWrapper
 							weekDays={weekDaysList}
 							traducedMonths={months}
-							handleSelectedDate={mockHandleSelectedDate}
+							setSelectedDate={mockSetSelectedDate}
 						/>,
 					);
 					const input = screen.getByTestId("input");
@@ -96,17 +96,17 @@ describe("CalendarWrapper", () => {
 				const { input } = setup();
 				fireEvent.change(input, { target: { value: "06.30.2023" } });
 				expect(input.value).toBe("06.30.2023");
-				expect(mockHandleSelectedDate).toBeCalledWith("06.30.2023");
+				expect(mockSetSelectedDate).toBeCalledWith("06.30.2023");
 			});
 		});
 		describe("The input pass to 'onBlur' and the input value is empty", () => {
 			it("Should do nothing", async () => {
-				const mockHandleSelectedDate = jest.fn();
+				const mockSetSelectedDate = jest.fn();
 				render(
 					<CalendarWrapper
 						weekDays={weekDaysList}
 						traducedMonths={months}
-						handleSelectedDate={mockHandleSelectedDate}
+						setSelectedDate={mockSetSelectedDate}
 					/>,
 				);
 				const input = screen.getByTestId("input");
@@ -116,42 +116,42 @@ describe("CalendarWrapper", () => {
 		});
 		describe("The input pass to 'onBlur' and the input value is a valid date but in the wrong format", () => {
 			it("Should correct the date format", async () => {
-				const mockHandleSelectedDate = jest.fn();
+				const mockSetSelectedDate = jest.fn();
 				const date = new Date("2023", "7", "2");
 				const wrongFormatDate = format(date, "MM/dd/yyyy");
 				render(
 					<CalendarWrapper
 						weekDays={weekDaysList}
 						traducedMonths={months}
-						handleSelectedDate={mockHandleSelectedDate}
+						setSelectedDate={mockSetSelectedDate}
 						selectedDate={wrongFormatDate}
-						dateFormat={"MM.dd.yyyy"}
+						selectedDateFormat={"MM.dd.yyyy"}
 					/>,
 				);
 				const input = screen.getByTestId("input");
 				input.value = wrongFormatDate;
 				fireEvent.blur(input);
-				expect(mockHandleSelectedDate).toBeCalledWith(format(date, "MM.dd.yyyy"));
+				expect(mockSetSelectedDate).toBeCalledWith(format(date, "MM.dd.yyyy"));
 			});
 		});
 		describe("The input pass to 'onBlur' and the input value is not a valid date", () => {
 			it("Should log the today's date", async () => {
-				const mockHandleSelectedDate = jest.fn();
+				const mockSetSelectedDate = jest.fn();
 				const today = new Date();
 				const wrongDate = "wrongDate";
 				render(
 					<CalendarWrapper
 						weekDays={weekDaysList}
 						traducedMonths={months}
-						handleSelectedDate={mockHandleSelectedDate}
+						setSelectedDate={mockSetSelectedDate}
 						selectedDate={wrongDate}
-						dateFormat={"MM.dd.yyyy"}
+						selectedDateFormat={"MM.dd.yyyy"}
 					/>,
 				);
 				const input = screen.getByTestId("input");
 				input.value = wrongDate;
 				fireEvent.blur(input);
-				expect(mockHandleSelectedDate).toBeCalledWith(format(today, "MM.dd.yyyy"));
+				expect(mockSetSelectedDate).toBeCalledWith(format(today, "MM.dd.yyyy"));
 			});
 		});
 	});

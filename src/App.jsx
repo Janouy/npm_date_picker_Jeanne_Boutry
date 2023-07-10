@@ -5,11 +5,11 @@ import "./App.css";
 
 function App() {
 	const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-	const [date, setDate] = useState("");
+	const [selectedDate, setSelectedDate] = useState("");
 	const ariaLabelName = "dateInput";
 	const inputStyle = { width: 100, height: 14, fontSize: 12 };
 	const calendarWrapperStyle = { position: "absolute", top: 25 };
-	let defaultDateFormat = "MM.dd.yyyy";
+	let defaultSelectedDateFormat = "MM.dd.yyyy";
 	let defaultLanguage = "en";
 
 	return (
@@ -17,10 +17,10 @@ function App() {
 			<CalendarWrapper
 				isCalendarOpen={isCalendarOpen}
 				setIsCalendarOpen={setIsCalendarOpen}
-				selectedDate={date}
-				handleSelectedDate={setDate}
+				selectedDate={selectedDate}
+				setSelectedDate={setSelectedDate}
 				language={defaultLanguage}
-				dateFormat={defaultDateFormat}
+				selectedDateFormat={defaultSelectedDateFormat}
 				inputStyle={inputStyle}
 				calendarWrapperStyle={calendarWrapperStyle}
 				ariaLabelName={ariaLabelName}

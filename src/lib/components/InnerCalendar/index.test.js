@@ -18,7 +18,7 @@ describe("Years", () => {
 					choosenYear={2023}
 					choosenMonth={5}
 					language={"en"}
-					dateFormat={"MM.dd.yyyy"}
+					selectedDateFormat={"MM.dd.yyyy"}
 					setSelectedDate={mockSetSelectedDate}
 					setIsCalendarOpen={mockSetIsCalendarOpen}
 				/>,

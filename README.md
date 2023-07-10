@@ -51,7 +51,7 @@ import { useState } from "react";
 
 function MyComponent() {
     const language = "en";
-    const dateFormat = "MM.dd.yyyy";
+    const selectedDateFormat = "MM.dd.yyyy";
     const inputStyle = { width: 197, height: 25, fontSize: 13 };
     const [date, setDate] = useState();
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -66,9 +66,9 @@ function MyComponent() {
           isCalendarOpen={isCalendarOpen}
           setIsCalendarOpen={setIsCalendarOpen}
           selectedDate={date}
-          handleSelectedDate={(date) => setDate(date)}
+          setSelectedDate={(date) => setDate(date)}
           language={language}
-          dateFormat={dateFormat}
+          selectedDateFormat={selectedDateFormat}
           inputStyle={inputStyle}
           ariaLabelName={ariaLabelName}
 			/>
@@ -88,17 +88,17 @@ The following properties can be used to customize the EasyModale component:
 
 -   `selectedDate*` (string): A string that represents the date on which the user clicked.
 
--   `handleSelectedDate*` (function): A function that changes selectedDate's value.
+-   `setSelectedDate*` (function): A function that changes selectedDate's value.
 
 -   `language` (string): Determinates the calendar's language. (default: 'en'). Click [[Here](#supported-languages) to see supported languages.
 
--   `dateFormat` (string): Determinates the selectedDate's format. (default: 'MM/dd/yyyy').
+-   `selectedDateFormat` (string): Determinates the selectedDate's format. (default: 'MM/dd/yyyy').
 
--   `inputStyle` (object) : Set the input apparence.
+-   `inputStyle` (object) : Set the input apparence. (default: { width: 100, height: 14, fontSize: 12 };)
 
 -   `ariaLabelName` (string): If you want to add a personal 'name' && 'aria-label' to your input. (default: dateInput)
 
-*   required
+\*required
 
 ## Supported languages:
 

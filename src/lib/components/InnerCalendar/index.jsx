@@ -10,7 +10,7 @@ const InnerCalendar = ({
 	choosenMonth,
 	setSelectedDate,
 	setIsCalendarOpen,
-	dateFormat,
+	selectedDateFormat,
 	language,
 	selectedDate,
 }) => {
@@ -35,7 +35,8 @@ const InnerCalendar = ({
 										(date.getDate() === timeStamp?.getDate() &&
 											date.getMonth() === timeStamp?.getMonth() &&
 											choosenMonth === timeStamp?.getMonth() &&
-											date.getFullYear() === timeStamp?.getFullYear())
+											date.getFullYear() === timeStamp?.getFullYear()) ||
+										date.getDate() === new Date(timeStamp).getDate()
 											? "selectedDay-react-date-picker-janouy"
 											: date.getDate() === today.getDate() &&
 											  date.getMonth() === today.getMonth() &&
@@ -45,8 +46,6 @@ const InnerCalendar = ({
 											? "today-react-date-picker-janouy"
 											: date.getMonth() !== choosenMonth
 											? "otherMonthDay-react-date-picker-janouy"
-											: date.getDate() === new Date(timeStamp).getDate()
-											? "selectedDay-react-date-picker-janouy"
 											: "notSelectedDay-react-date-picker-janouy"
 									}
 									key={index}
@@ -57,7 +56,7 @@ const InnerCalendar = ({
 										onClick={
 											date.getMonth() === choosenMonth
 												? () => {
-														setSelectedDate(format(date, dateFormat));
+														setSelectedDate(format(date, selectedDateFormat));
 														setTimeStamp(date);
 														setIsCalendarOpen(false);
 												  }

@@ -1,5 +1,6 @@
 import { shortMonths, longMonths, daysPerWeek, maxCalendarDays, timeInADay } from "./const";
 
+//scroll to the choosen month or choosen year when list is open
 export const scrollToElement = (element, parentElement) => {
 	const el = document.querySelector(element);
 	const parentEl = document.querySelector(parentElement);

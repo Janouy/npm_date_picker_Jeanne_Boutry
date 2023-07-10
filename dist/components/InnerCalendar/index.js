@@ -17,7 +17,7 @@ const InnerCalendar = _ref => {
     choosenMonth,
     setSelectedDate,
     setIsCalendarOpen,
-    dateFormat,
+    selectedDateFormat,
     language,
     selectedDate
   } = _ref;
@@ -30,13 +30,13 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "weekDay-react-date-picker-janouy"
   }, weekDay), (0, _functions.displayCurrentMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === weekDayIndex ? /*#__PURE__*/_react.default.createElement("div", {
-    className: date.getDate() === _const.today.getDate() && date.getMonth() === _const.today.getMonth() && choosenMonth === _const.today.getMonth() && date.getFullYear() === _const.today.getFullYear() && !selectedDate || date.getDate() === timeStamp?.getDate() && date.getMonth() === timeStamp?.getMonth() && choosenMonth === timeStamp?.getMonth() && date.getFullYear() === timeStamp?.getFullYear() ? "selectedDay-react-date-picker-janouy" : date.getDate() === _const.today.getDate() && date.getMonth() === _const.today.getMonth() && choosenMonth === _const.today.getMonth() && date.getFullYear() === _const.today.getFullYear() && selectedDate ? "today-react-date-picker-janouy" : date.getMonth() !== choosenMonth ? "otherMonthDay-react-date-picker-janouy" : date.getDate() === new Date(timeStamp).getDate() ? "selectedDay-react-date-picker-janouy" : "notSelectedDay-react-date-picker-janouy",
+    className: date.getDate() === _const.today.getDate() && date.getMonth() === _const.today.getMonth() && choosenMonth === _const.today.getMonth() && date.getFullYear() === _const.today.getFullYear() && !selectedDate || date.getDate() === timeStamp?.getDate() && date.getMonth() === timeStamp?.getMonth() && choosenMonth === timeStamp?.getMonth() && date.getFullYear() === timeStamp?.getFullYear() || date.getDate() === new Date(timeStamp).getDate() ? "selectedDay-react-date-picker-janouy" : date.getDate() === _const.today.getDate() && date.getMonth() === _const.today.getMonth() && choosenMonth === _const.today.getMonth() && date.getFullYear() === _const.today.getFullYear() && selectedDate ? "today-react-date-picker-janouy" : date.getMonth() !== choosenMonth ? "otherMonthDay-react-date-picker-janouy" : "notSelectedDay-react-date-picker-janouy",
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date-react-date-picker-janouy",
     "data-testid": date,
     onClick: date.getMonth() === choosenMonth ? () => {
-      setSelectedDate((0, _dateFns.format)(date, dateFormat));
+      setSelectedDate((0, _dateFns.format)(date, selectedDateFormat));
       setTimeStamp(date);
       setIsCalendarOpen(false);
     } : null
