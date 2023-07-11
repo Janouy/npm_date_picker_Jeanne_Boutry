@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.selectedMonthDatesArray = exports.scrollToElement = exports.isValidDate = exports.displayCurrentMonth = void 0;
 var _const = require("./const");
+//scroll to the choosen month or choosen year when list is open
 const scrollToElement = (element, parentElement) => {
   const el = document.querySelector(element);
   const parentEl = document.querySelector(parentElement);

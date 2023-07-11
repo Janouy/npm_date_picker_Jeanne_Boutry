@@ -1,4 +1,4 @@
-import CalendarWrapper from "./";
+import DatePicker from "./";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { format } from "date-fns";
 
@@ -24,19 +24,19 @@ jest.mock("../Calendar/index", () => (props) => {
 	return <mock-liste role="component-calendar" />;
 });
 
-describe("CalendarWrapper", () => {
+describe("DatePicker", () => {
 	it("Should render without crash", async () => {
-		render(<CalendarWrapper weekDays={weekDaysList} traducedMonths={months} />);
+		render(<DatePicker weekDays={weekDaysList} traducedMonths={months} />);
 	});
 	it("Should render the calendar component", async () => {
-		render(<CalendarWrapper weekDays={weekDaysList} traducedMonths={months} />);
+		render(<DatePicker weekDays={weekDaysList} traducedMonths={months} />);
 		expect(mockComposantCalendar).toHaveBeenCalledTimes(1);
 		expect(mockComposantCalendar.mock.calls[0][0].weekDays).toBe(weekDaysList);
 	});
 	describe("The selected date si '06.06.2023'", () => {
 		it("Should display the date in the input value", async () => {
 			render(
-				<CalendarWrapper
+				<DatePicker
 					weekDays={weekDaysList}
 					traducedMonths={months}
 					selectedDate={"06.06.2023"}
@@ -52,7 +52,7 @@ describe("CalendarWrapper", () => {
 			it("Should pass the isCalendarOpen props to true", async () => {
 				const mockSetIsCalendarOpen = jest.fn();
 				render(
-					<CalendarWrapper
+					<DatePicker
 						weekDays={weekDaysList}
 						traducedMonths={months}
 						setIsCalendarOpen={mockSetIsCalendarOpen}
@@ -66,7 +66,7 @@ describe("CalendarWrapper", () => {
 			it("Should pass the isCalendarOpen props to false", async () => {
 				const mockSetIsCalendarOpen = jest.fn();
 				render(
-					<CalendarWrapper
+					<DatePicker
 						weekDays={weekDaysList}
 						traducedMonths={months}
 						setIsCalendarOpen={mockSetIsCalendarOpen}
@@ -81,7 +81,7 @@ describe("CalendarWrapper", () => {
 				const mockSetSelectedDate = jest.fn();
 				const setup = () => {
 					const utils = render(
-						<CalendarWrapper
+						<DatePicker
 							weekDays={weekDaysList}
 							traducedMonths={months}
 							setSelectedDate={mockSetSelectedDate}
@@ -103,7 +103,7 @@ describe("CalendarWrapper", () => {
 			it("Should do nothing", async () => {
 				const mockSetSelectedDate = jest.fn();
 				render(
-					<CalendarWrapper
+					<DatePicker
 						weekDays={weekDaysList}
 						traducedMonths={months}
 						setSelectedDate={mockSetSelectedDate}
@@ -120,7 +120,7 @@ describe("CalendarWrapper", () => {
 				const date = new Date("2023", "7", "2");
 				const wrongFormatDate = format(date, "MM/dd/yyyy");
 				render(
-					<CalendarWrapper
+					<DatePicker
 						weekDays={weekDaysList}
 						traducedMonths={months}
 						setSelectedDate={mockSetSelectedDate}
@@ -140,7 +140,7 @@ describe("CalendarWrapper", () => {
 				const today = new Date();
 				const wrongDate = "wrongDate";
 				render(
-					<CalendarWrapper
+					<DatePicker
 						weekDays={weekDaysList}
 						traducedMonths={months}
 						setSelectedDate={mockSetSelectedDate}

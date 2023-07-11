@@ -5,7 +5,7 @@ import { calendarChildren } from "../../utils/const";
 import { isValidDate } from "../../utils/functions";
 import { format } from "date-fns";
 
-const CalendarWrapper = ({
+const DatePicker = ({
 	isCalendarOpen,
 	setIsCalendarOpen,
 	setSelectedDate,
@@ -13,7 +13,7 @@ const CalendarWrapper = ({
 	selectedDateFormat,
 	selectedDate,
 	inputStyle,
-	calendarWrapperStyle,
+	DatePickerStyle,
 	traducedMonths,
 	weekDays,
 	ariaLabelName,
@@ -54,7 +54,7 @@ const CalendarWrapper = ({
 		setSelectedDate(event.target.value);
 	};
 	return (
-		<div className="calendarWrapper-react-date-picker-janouy" style={calendarWrapperStyle}>
+		<div className="datePicker-react-date-picker-janouy" style={DatePickerStyle}>
 			<input
 				className="dateInput-react-date-picker-janouy"
 				value={selectedDate}
@@ -82,4 +82,4 @@ const CalendarWrapper = ({
 	);
 };
 
-export default CalendarWrapper;
+export default DatePicker;

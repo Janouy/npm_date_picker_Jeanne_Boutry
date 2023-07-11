@@ -1,4 +1,4 @@
-import CalendarWrapper from "./components/CalendarWrapper";
+import DatePicker from "./components/DatePicker";
 
-//export CalendarWrapper to permit users to import CalendarWrapper from the npm library
-export { CalendarWrapper };
+//export DatePicker to permit users to import DatePicker from the npm library
+export { DatePicker };

@@ -46,7 +46,7 @@ To use Calendar in your React project, you need to import it into your component
 
 ```
 
-import Calendar from "react-date-picker-janouy/dist/components/CalendarWrapper";
+import Calendar from "react-date-picker-janouy/dist/components/DatePicker";
 import { useState } from "react";
 
 function MyComponent() {
