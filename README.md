@@ -92,7 +92,7 @@ The following properties can be used to customize the EasyModale component:
 
 -   `language` (string): Determinates the calendar's language. (default: 'en'). Click [[Here](#supported-languages) to see supported languages.
 
--   `selectedDateFormat` (string): Determinates the selectedDate's format. (default: 'MM/dd/yyyy').
+-   `selectedDateFormat` (string): Determinates the selectedDate's format. (default: 'MM.dd.yyyy').
 
 -   `inputStyle` (object) : Set the input apparence. (default: { width: 100, height: 14, fontSize: 12 };)
 
