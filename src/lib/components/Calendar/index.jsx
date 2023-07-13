@@ -153,7 +153,6 @@ const Calendar = ({
 					choosenMonth={choosenMonth}
 					setSelectedDate={setSelectedDate}
 					setIsCalendarOpen={setIsCalendarOpen}
-					selectedDate={selectedDate}
 					selectedDateFormat={selectedDateFormat}
 					weekDays={weekDays}
 					language={language}

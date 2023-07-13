@@ -8,10 +8,14 @@ export const shortMonths = ["1", "3", "5", "8", "10"];
 export const longMonths = ["0", "2", "4", "6", "7", "9", "11"];
 export let months = [];
 export let years = [];
+export const possibleLastDayOfMonth = [29, 30, 31];
 for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
 	years.push(yearIt);
 }
-
+export const leapYears = [
+	1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024,
+	2028, 2032, 2036, 2040, 2044, 2048,
+];
 export const calendarChildren = [
 	"calendar-react-date-picker-janouy",
 	"closedCalendar-react-date-picker-janouy",

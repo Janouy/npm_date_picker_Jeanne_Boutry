@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.years = exports.weekDays_options = exports.today = exports.timeInADay = exports.shortMonths = exports.months = exports.minCalendarDays = exports.maxCalendarDays = exports.longMonths = exports.daysPerWeek = exports.calendarChildren = void 0;
+exports.years = exports.weekDays_options = exports.today = exports.timeInADay = exports.shortMonths = exports.possibleLastDayOfMonth = exports.months = exports.minCalendarDays = exports.maxCalendarDays = exports.longMonths = exports.leapYears = exports.daysPerWeek = exports.calendarChildren = void 0;
 const daysPerWeek = 7;
 // 42 corresponds to a celendar with 6 lines and 7 columns
 exports.daysPerWeek = daysPerWeek;
@@ -22,9 +22,13 @@ let months = [];
 exports.months = months;
 let years = [];
 exports.years = years;
+const possibleLastDayOfMonth = [29, 30, 31];
+exports.possibleLastDayOfMonth = possibleLastDayOfMonth;
 for (let yearIt = 1950; yearIt <= 2050; yearIt++) {
   years.push(yearIt);
 }
+const leapYears = [1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040, 2044, 2048];
+exports.leapYears = leapYears;
 const calendarChildren = ["calendar-react-date-picker-janouy", "closedCalendar-react-date-picker-janouy", "calendarRow-react-date-picker-janouy", "day-react-date-picker-janouy", "today-react-date-picker-janouy", "otherMonthDay-react-date-picker-janouy", "selectedDay-react-date-picker-janouy", "notSelectedDay-react-date-picker-janouy", "date-react-date-picker-janouy", "selectWrapper-react-date-picker-janouy", "leftArrow-react-date-picker-janouy", "house-react-date-picker-janouy", "labelsWrapper-react-date-picker-janouy", "rightArrow-react-date-picker-janouy", "selectMonth-react-date-picker-janouy", "selectMonthTitle-react-date-picker-janouy", "selectArrow-react-date-picker-janouy", "selectMonthsOptions-react-date-picker-janouy", "selectYearsOptions-react-date-picker-janouy", "selectOptionClosed-react-date-picker-janouy", "selectedMonthOption-react-date-picker-janouy", "option-react-date-picker-janouy", "selectYear-react-date-picker-janouy", "selectYearTitle-react-date-picker-janouy", "selectedYearOption-react-date-picker-janouy", "dateInput-react-date-picker-janouy"];
 exports.calendarChildren = calendarChildren;
 const today = new Date();
