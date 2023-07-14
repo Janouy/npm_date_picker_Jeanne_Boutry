@@ -15,7 +15,6 @@ const Calendar = ({
 	selectedDateFormat,
 	traducedMonths,
 	weekDays,
-	selectedDate,
 }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();

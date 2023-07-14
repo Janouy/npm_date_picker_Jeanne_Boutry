@@ -72,7 +72,6 @@ const DatePicker = ({
 				isCalendarOpen={isCalendarOpen}
 				setIsCalendarOpen={setIsCalendarOpen}
 				setSelectedDate={setSelectedDate}
-				selectedDate={selectedDate}
 				language={language}
 				selectedDateFormat={selectedDateFormat}
 				traducedMonths={traducedMonths}
