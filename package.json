@@ -17,7 +17,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Janouy/npm_publish_test.git"
+		"url": "git+https://github.com/Janouy/npm_date_picker_Jeanne_Boutry"
 	},
 	"dependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
