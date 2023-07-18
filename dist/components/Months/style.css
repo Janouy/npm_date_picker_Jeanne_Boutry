@@ -42,6 +42,7 @@
 .selectedMonthOption-react-date-picker-janouy {
 	background: #33aaff;
 	box-shadow: #178fe5 0 1px 3px 0 inset;
+	font-size: 12px;
 	line-height: 20px;
 	padding-right: 0.5vh;
 	color: #fff;
@@ -49,4 +50,5 @@
 .option-react-date-picker-janouy {
 	line-height: 20px;
 	padding-right: 0.5vh;
+	font-size: 12px;
 }
