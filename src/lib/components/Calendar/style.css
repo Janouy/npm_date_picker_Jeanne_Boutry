@@ -20,8 +20,10 @@
 	align-items: center;
 }
 .labelsWrapper-react-date-picker-janouy {
+	width: 100%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
+	align-items: center;
 }
 .leftArrow-react-date-picker-janouy {
 	width: 20px;
@@ -37,7 +39,6 @@
 }
 .house-react-date-picker-janouy {
 	width: 30px;
-	margin-left: -2vh;
 	cursor: pointer;
 }
 .house-react-date-picker-janouy:hover,

@@ -1,7 +1,6 @@
 .selectMonth-react-date-picker-janouy {
-	width: 8vh;
-	height: 2vh;
-	margin-top: 0.5vh;
+	width: 65%;
+	height: 15px;
 }
 
 .selectMonthTitle-react-date-picker-janouy {
@@ -25,7 +24,7 @@
 	position: relative;
 	top: 1vh;
 	width: 100%;
-	height: 18vh;
+	height: 100px;
 	cursor: pointer;
 	overflow: hidden;
 	overflow-y: scroll;
@@ -43,11 +42,11 @@
 .selectedMonthOption-react-date-picker-janouy {
 	background: #33aaff;
 	box-shadow: #178fe5 0 1px 3px 0 inset;
-	line-height: 2.5vh;
+	line-height: 20px;
 	padding-right: 0.5vh;
 	color: #fff;
 }
 .option-react-date-picker-janouy {
-	line-height: 2.5vh;
+	line-height: 20px;
 	padding-right: 0.5vh;
 }
