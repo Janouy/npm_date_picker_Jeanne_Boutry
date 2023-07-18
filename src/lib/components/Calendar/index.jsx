@@ -6,6 +6,7 @@ import Months from "../Months";
 import Years from "../Years";
 import InnerCalendar from "../InnerCalendar";
 import { scrollToElement } from "../../utils/functions";
+import { isBrowser } from "react-device-detect";
 
 const Calendar = ({
 	isCalendarOpen,
@@ -87,7 +88,7 @@ const Calendar = ({
 	//prevent page scoll when calendar is open
 	useEffect(() => {
 		let calendarEl = calendarElement.current;
-		if (isCalendarOpen) {
+		if (isCalendarOpen && isBrowser) {
 			calendarEl.addEventListener("mouseover", () => {
 				document.body.classList.add("noScroll");
 			});
