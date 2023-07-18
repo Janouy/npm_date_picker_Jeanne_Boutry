@@ -73,7 +73,12 @@ export const isDateIsToday = (date, choosenMonth, choosenYear) => {
 };
 
 //set the apparence of the date's case in the calendar
-export const handleDateAppearance = (date, choosenMonth, selectedDatetimeStamp, choosenYear) => {
+export const handleDateAppearance = (date, choosenMonth, selectedDatetimeStamp, choosenYear, majority) => {
+	const majorityYearBirth = today.getFullYear() - majority;
+	const majorityBirthDate = new Date(majorityYearBirth, today.getMonth(), today.getDate());
+	if (majority && date > majorityBirthDate) {
+		return "otherMonthDay-react-date-picker-janouy";
+	}
 	if (!selectedDatetimeStamp) {
 		if (isDateIsToday(date, choosenMonth, choosenYear)) {
 			return "today-react-date-picker-janouy";

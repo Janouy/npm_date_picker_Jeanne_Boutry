@@ -18,10 +18,18 @@ const InnerCalendar = _ref => {
     setSelectedDate,
     setIsCalendarOpen,
     selectedDateFormat,
-    language
+    language,
+    majority
   } = _ref;
   const [selectedDatetimeStamp, setSelectedDateTimeStamp] = (0, _react.useState)();
   let weekDays = _const.weekDays_options.i18n[language].dayOfWeekShort;
+  const handleSelectedDate = (e, date) => {
+    if (e.target.parentNode.className !== "otherMonthDay-react-date-picker-janouy") {
+      setSelectedDate((0, _dateFns.format)(date, selectedDateFormat));
+      setSelectedDateTimeStamp(date);
+      setIsCalendarOpen(false);
+    }
+  };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "calendarRow-react-date-picker-janouy"
   }, weekDays.map((weekDay, weekDayIndex) => /*#__PURE__*/_react.default.createElement("div", {
@@ -29,15 +37,13 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "weekDay-react-date-picker-janouy"
   }, weekDay), (0, _functions.displayCurrentMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === weekDayIndex ? /*#__PURE__*/_react.default.createElement("div", {
-    className: (0, _functions.handleDateAppearance)(date, choosenMonth, selectedDatetimeStamp, choosenYear),
+    className: (0, _functions.handleDateAppearance)(date, choosenMonth, selectedDatetimeStamp, choosenYear, majority),
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date-react-date-picker-janouy",
     "data-testid": date,
-    onClick: date.getMonth() === choosenMonth ? () => {
-      setSelectedDate((0, _dateFns.format)(date, selectedDateFormat));
-      setSelectedDateTimeStamp(date);
-      setIsCalendarOpen(false);
+    onClick: date.getMonth() === choosenMonth ? e => {
+      handleSelectedDate(e, date);
     } : null
   }, date.getDate())) : null)))));
 };

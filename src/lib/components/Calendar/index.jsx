@@ -16,6 +16,7 @@ const Calendar = ({
 	selectedDateFormat,
 	traducedMonths,
 	weekDays,
+	majority,
 }) => {
 	const currentMonth = new Date().getMonth();
 	const currentYear = new Date().getFullYear();
@@ -156,6 +157,7 @@ const Calendar = ({
 					selectedDateFormat={selectedDateFormat}
 					weekDays={weekDays}
 					language={language}
+					majority={majority}
 				/>
 			</div>
 		</>

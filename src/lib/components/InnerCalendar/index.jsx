@@ -11,10 +11,17 @@ const InnerCalendar = ({
 	setIsCalendarOpen,
 	selectedDateFormat,
 	language,
+	majority,
 }) => {
 	const [selectedDatetimeStamp, setSelectedDateTimeStamp] = useState();
 	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
-
+	const handleSelectedDate = (e, date) => {
+		if (e.target.parentNode.className !== "otherMonthDay-react-date-picker-janouy") {
+			setSelectedDate(format(date, selectedDateFormat));
+			setSelectedDateTimeStamp(date);
+			setIsCalendarOpen(false);
+		}
+	};
 	return (
 		<>
 			<div className="calendarRow-react-date-picker-janouy">
@@ -29,6 +36,7 @@ const InnerCalendar = ({
 										choosenMonth,
 										selectedDatetimeStamp,
 										choosenYear,
+										majority,
 									)}
 									key={index}
 								>
@@ -37,10 +45,8 @@ const InnerCalendar = ({
 										data-testid={date}
 										onClick={
 											date.getMonth() === choosenMonth
-												? () => {
-														setSelectedDate(format(date, selectedDateFormat));
-														setSelectedDateTimeStamp(date);
-														setIsCalendarOpen(false);
+												? (e) => {
+														handleSelectedDate(e, date);
 												  }
 												: null
 										}

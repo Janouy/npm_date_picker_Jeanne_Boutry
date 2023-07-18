@@ -11,6 +11,7 @@ function App() {
 	const datePickerStyle = { position: "absolute", top: 25 };
 	let defaultSelectedDateFormat = "MM.dd.yyyy";
 	let defaultLanguage = "en";
+	const majority = 18;
 
 	return (
 		<div className="App-react-date-picker-janouy">
@@ -24,6 +25,7 @@ function App() {
 				inputStyle={inputStyle}
 				datePickerStyle={datePickerStyle}
 				ariaLabelName={ariaLabelName}
+				majority={majority}
 			/>
 		</div>
 	);
