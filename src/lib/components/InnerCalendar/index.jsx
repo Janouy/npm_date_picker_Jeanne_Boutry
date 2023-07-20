@@ -11,7 +11,7 @@ const InnerCalendar = ({
 	setIsCalendarOpen,
 	selectedDateFormat,
 	language,
-	majority,
+	minAgeRequired,
 }) => {
 	const [selectedDatetimeStamp, setSelectedDateTimeStamp] = useState();
 	let weekDays = weekDays_options.i18n[language].dayOfWeekShort;
@@ -36,7 +36,7 @@ const InnerCalendar = ({
 										choosenMonth,
 										selectedDatetimeStamp,
 										choosenYear,
-										majority,
+										minAgeRequired,
 									)}
 									key={index}
 								>

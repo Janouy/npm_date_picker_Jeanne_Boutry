@@ -19,7 +19,7 @@ const InnerCalendar = _ref => {
     setIsCalendarOpen,
     selectedDateFormat,
     language,
-    majority
+    minAgeRequired
   } = _ref;
   const [selectedDatetimeStamp, setSelectedDateTimeStamp] = (0, _react.useState)();
   let weekDays = _const.weekDays_options.i18n[language].dayOfWeekShort;
@@ -37,7 +37,7 @@ const InnerCalendar = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "weekDay-react-date-picker-janouy"
   }, weekDay), (0, _functions.displayCurrentMonth)(choosenYear.toString(), choosenMonth.toString()).map((date, index) => date.getDay() === weekDayIndex ? /*#__PURE__*/_react.default.createElement("div", {
-    className: (0, _functions.handleDateAppearance)(date, choosenMonth, selectedDatetimeStamp, choosenYear, majority),
+    className: (0, _functions.handleDateAppearance)(date, choosenMonth, selectedDatetimeStamp, choosenYear, minAgeRequired),
     key: index
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "date-react-date-picker-janouy",

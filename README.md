@@ -59,7 +59,7 @@ function MyComponent() {
     const showCalendar = () => {
         setIsCalendarOpen(true);
     };
-    const majority=18;
+    const minAgeRequired=18;
 
   return (
     <div>
@@ -72,8 +72,8 @@ function MyComponent() {
           selectedDateFormat={selectedDateFormat}
           inputStyle={inputStyle}
           ariaLabelName={ariaLabelName}
-          majority={majority}
-			/>
+          minAgeRequired={minAgeRequired}
+      />
 	</div>
   );
 }
@@ -100,7 +100,7 @@ The following properties can be used to customize the EasyModale component:
 
 -   `ariaLabelName` (string): If you want to add a personal 'name' && 'aria-label' to your input. (default: dateInput).
 
--   `majority` (number): For a date of birth, you can add an age of majority. Later dates will be disabled. (default: null).
+-   `minAgeRequired` (number): For a date of birth, you can add an age of majority. Later dates will be disabled. (default: null).
 
 \*required
 

@@ -17,7 +17,7 @@ const DatePicker = ({
 	traducedMonths,
 	weekDays,
 	ariaLabelName,
-	majority,
+	minAgeRequired,
 }) => {
 	//close the calendar if user clicks outside it
 	const handleUserKeyPress = (elt) => {
@@ -77,7 +77,7 @@ const DatePicker = ({
 				selectedDateFormat={selectedDateFormat}
 				traducedMonths={traducedMonths}
 				weekDays={weekDays}
-				majority={majority}
+				minAgeRequired={minAgeRequired}
 			/>
 		</div>
 	);
