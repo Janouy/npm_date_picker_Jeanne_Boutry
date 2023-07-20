@@ -14,7 +14,7 @@ react-test-janouy is a simple React component that allows you to add a calendar 
 
 ## Main features
 
--   ☀️ Select days, ranges or whatever
+-   ☀️ Select days
 -   🌎 Localizable into many [language](#supported-languages)
 -   📄 Easy to integrate
 
